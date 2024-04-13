@@ -36,11 +36,8 @@ function setupAudioContext() {
       requestAnimationFrame(draw);
       analyser.getByteTimeDomainData(dataArray);
 
-      ctx.fillStyle = "rgb(200, 200, 200)";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      ctx.lineWidth = 2;
-      ctx.strokeStyle = "rgb(0, 0, 0)";
+      ctx.lineWidth = 5;
+      ctx.strokeStyle = "rgb(230, 230, 230)";
 
       let sliceWidth = (canvas.width * 1.0) / bufferLength;
       let x = 0;
