@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parakeet App HomePage</title>
-</head>
-<body>
-    <h1>Welcome to the homepage</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parakeet</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="left">
+        <p class="instructions">
+          Say out loud one of the following words to navigate:
+          <ul class="command-list">
+            <li>Home</li>
+            <li>Waiting list</li>
+            <li>Contact</li>
+            <li>Who we are</li>
+        </ul>
+        </p>
+        <div class="audio-visualization">
+            <canvas id="audioCanvas"></canvas>
+        </div>
+      </div>
+      <div class="right">
+        <div class="content">Speak to see the content here...</div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>
