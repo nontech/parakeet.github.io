@@ -105,7 +105,6 @@ document.querySelector(".audio-visualization").addEventListener("click", startRe
 window.onload = function () {
   canvas.width = document.querySelector(".audio-visualization").clientWidth;
   canvas.height = 500; // Set the height as defined in your CSS
-  startRecognition();
 };
 
 // const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
