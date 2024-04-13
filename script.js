@@ -34,6 +34,7 @@ function setupAudioContext() {
 
     function draw() {
       requestAnimationFrame(draw);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
       analyser.getByteTimeDomainData(dataArray);
 
       ctx.lineWidth = 5;
