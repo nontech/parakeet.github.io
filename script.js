@@ -27,6 +27,22 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Recognition has started");
   };
 
+  recognition.onaudiostart = function () {
+    console.log("Audio capturing started");
+  };
+
+  recognition.onsoundstart = function () {
+    console.log("Sound has been detected");
+  };
+
+  recognition.onspeechstart = function () {
+    console.log("Speech has been detected");
+  };
+
+  recognition.onresult = function () {
+    console.log("Result has been detected");
+  };
+
   recognition.onaudioend = function () {
     console.log("Audio capturing ended");
   };
