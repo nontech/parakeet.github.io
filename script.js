@@ -38,16 +38,6 @@ document.addEventListener("DOMContentLoaded", function () {
   function navigateToContent(command) {
     const contentDiv = document.querySelector(".content");
 
-    let contentImage1 = document.getElementById("contentImage1");
-    let contentImage2 = document.getElementById("contentImage2");
-    let contentImage3 = document.getElementById("contentImage3");
-    let contentImage4 = document.getElementById("contentImage4");
-
-    contentImage1.classList.add("hidden");
-    contentImage2.classList.add("hidden");
-    contentImage3.classList.add("hidden");
-    contentImage4.classList.add("hidden");
-
     let contentImage = document.getElementById("contentImage");
     contentImage.style.display = "none";
 
