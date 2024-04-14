@@ -17,6 +17,10 @@ export function handleVoice(command) {
     command = "home";
   }
 
+  if (command.includes("we are")) {
+    command = "who we are";
+  }
+
   switch (command) {
     case "home":
       contentTitle.textContent = "Unlock the Natural Way of Language Learning";
