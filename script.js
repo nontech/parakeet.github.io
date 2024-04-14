@@ -42,10 +42,6 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Speech has been detected");
   };
 
-  recognition.onresult = function () {
-    console.log("Result has been detected");
-  };
-
   recognition.onaudioend = function () {
     console.log("Audio capturing ended");
   };
