@@ -108,6 +108,8 @@ document.addEventListener("DOMContentLoaded", function () {
   function closeModal() {
     var modal = document.getElementById("voiceModal");
     modal.style.display = "none";
+    var logo = document.getElementById("logo");
+    logo.style.background = "none";
   }
 
   function handleStartRecognition() {
