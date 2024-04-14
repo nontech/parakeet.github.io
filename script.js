@@ -1,120 +1,80 @@
-// Function to open the modal
-function closeModal() {
-  startRecognition();
-  var modal = document.getElementById("voiceModal");
-  modal.style.display = "none";
-  var logo = document.getElementById("logo");
-  logo.style.background = "none";
-}
+import { drawAudioVisual } from './draw_audio_visual.js';
 
-window.onload = function () {
-  // Show the modal when the page loads
-  var modal = document.getElementById("voiceModal");
-  modal.style.display = "flex";
-};
-
-const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-const recognition = new SpeechRecognition();
-recognition.continuous = false;
-recognition.lang = "en-US";
-recognition.interimResults = false;
-recognition.maxAlternatives = 1;
-
-const contentDiv = document.querySelector(".content");
-const canvas = document.getElementById("audioCanvas");
-const ctx = canvas.getContext("2d");
-
-let audioContext;
-let analyser;
-let microphone;
-
-function setupAudioContext() {
-  if (!audioContext) {
-    audioContext = new (window.AudioContext || window.webkitAudioContext)();
-    analyser = audioContext.createAnalyser();
-    analyser.fftSize = 256;
-    const bufferLength = analyser.frequencyBinCount;
-    const dataArray = new Uint8Array(bufferLength);
-
-    navigator.mediaDevices
-      .getUserMedia({ audio: true })
-      .then(function (stream) {
-        microphone = audioContext.createMediaStreamSource(stream);
-        microphone.connect(analyser);
-        draw();
-      })
-      .catch(function (err) {
-        console.error("Error accessing the microphone", err);
-      });
-
-    function draw() {
-      requestAnimationFrame(draw);
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      analyser.getByteTimeDomainData(dataArray);
-
-      ctx.lineWidth = 5;
-      ctx.strokeStyle = "rgb(230, 230, 230)";
-
-      let sliceWidth = (canvas.width * 1.0) / bufferLength;
-      let x = 0;
-
-      ctx.beginPath();
-      for (let i = 0; i < bufferLength; i++) {
-        let v = dataArray[i] / 128.0;
-        let y = (v * canvas.height) / 2;
-
-        if (i === 0) {
-          ctx.moveTo(x, y);
-        } else {
-          ctx.lineTo(x, y);
-        }
-        x += sliceWidth;
-      }
-      ctx.lineTo(canvas.width, canvas.height / 2);
-      ctx.stroke();
+document.addEventListener('DOMContentLoaded', function () {
+    
+    // Check if the browser supports the Web Speech API
+    if (!('webkitSpeechRecognition' in window)) {
+        alert('Your browser does not support speech recognition. Please try using Google Chrome.');
+        return;
     }
-  }
-}
 
-recognition.onresult = function (event) {
-  const last = event.results.length - 1;
-  const command = event.results[last][0].transcript.trim().toLowerCase();
+    var recognition = new webkitSpeechRecognition();
+    recognition.continuous = true; // Continuously listen to speech
+    recognition.interimResults = true; // Show interim results
+    recognition.lang = 'en-US'; // Set language
 
-  switch (command) {
-    case "waiting list":
-      contentDiv.textContent = "Navigated to Waiting List";
-      break;
-    case "home":
-      contentDiv.textContent = "Navigated to Home";
-      break;
-    case "contact":
-      contentDiv.textContent = "Navigated to Contact";
-      break;
-    case "who we are":
-      contentDiv.textContent = "Navigated to Who We Are";
-      break;
-    default:
-      // contentDiv.textContent = "Command not recognized";
-      break;
-  }
-};
+    var isRecognizing = false; // Track if recognition is active
 
-recognition.onerror = function (event) {
-  // contentDiv.textContent = "Error occurred in recognition: " + event.error;
-};
+    
+    recognition.onresult = function(event) {
+        var last = event.results.length - 1;
+        var command = event.results[last][0].transcript.trim().toLowerCase();
+        console.log('Voice command recognized:', command);
+        navigateToContent(command);
+    };
 
-recognition.onend = function () {
-  // As soon as the recognition session ends, start a new one
-  recognition.start();
-};
+    recognition.onstart = function() {
+        isRecognizing = true;
+        console.log('Recognition has started');
+    };
 
-function startRecognition() {
-  recognition.start();
-  setupAudioContext(); // Ensure the audio context is set up on first recognition start
-}
+    recognition.onerror = function(event) {
+        console.error('Recognition error:', event.error);
+    };
 
-document.querySelector(".audio-visualization").addEventListener("click", startRecognition);
 
-window.onload = function () {
-  canvas.width = document.querySelector(".audio-visualization").clientWidth;
-};
+    document.querySelector('#startToBeginButton').addEventListener('click', function() {
+        closeModal()
+        handleStartRecognition();
+    });
+
+    function navigateToContent(command) {
+        const contentDiv = document.querySelector(".content");
+        switch (command) {
+            case "home":
+              contentDiv.textContent = "Navigated to Home";
+              break;
+            case "waiting list":
+              contentDiv.textContent = "Navigated to Waiting List";
+              break;
+            case "contact":
+              contentDiv.textContent = "Navigated to Contact";
+              break;
+            case "who we are":
+              contentDiv.textContent = "Navigated to Who We Are";
+              break;
+            default:
+              // contentDiv.textContent = "Command not recognized";
+              break;
+          }
+
+    }
+
+    function closeModal() {
+        var modal = document.getElementById('voiceModal');
+        modal.style.display = 'none';
+    }
+
+    function handleStartRecognition() {
+        if (!isRecognizing) {
+            recognition.start();
+            drawAudioVisual();
+        } else {
+            console.log('Recognition is already running.');
+        }
+    }
+
+    // attach functions to the window object to make them accessible globally
+    window.closeModal = closeModal;
+    window.handleStartRecognition = handleStartRecognition;
+});
