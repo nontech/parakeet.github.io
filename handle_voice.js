@@ -4,12 +4,18 @@ let contentImage2 = document.getElementById("contentImage2");
 let contentImage3 = document.getElementById("contentImage3");
 let contentImage4 = document.getElementById("contentImage4");
 
+let first_command = true;
+
 export function handleVoice(command) {
   let contentText = document.getElementById("contentText");
   contentText.style.display = "block";
 
   let contentTitle = document.getElementById("contentTitle");
   let contentBody = document.getElementById("contentBody");
+
+  if (command.includes("home")) {
+    command = "home";
+  }
 
   switch (command) {
     case "home":
@@ -59,6 +65,24 @@ export function handleVoice(command) {
       break;
     default:
       console.log("Command not recognized");
+      if (first_command) {
+        contentTitle.textContent = "Unlock the Natural Way of Language Learning";
+        contentBody.innerHTML = `
+            At parakeet, we revolutionize language learning by mimicking the natural learning process.
+            <ul>
+                <li>Learn in the same way you became a native speaker of your mother tongue.</li>
+                <li>Experience the power of learning a language organically through engaging, AI-generated scenarios tailored to your interests and needs.</li>
+                <li>Forget about screens, tedious grammar drills, and endless repetition without context.</li>
+                <li>Immerse yourself in practical, everyday conversations, just like a native speaker would.</li>
+            </ul>
+        `;
+        contentImage1.classList.remove("hidden");
+        contentImage2.classList.add("hidden");
+        contentImage3.classList.add("hidden");
+        contentImage4.classList.add("hidden");
+        contentImage.style.display = "none";
+      }
       break;
   }
+  first_command = false;
 }
