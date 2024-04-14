@@ -8,8 +8,11 @@ document.addEventListener("DOMContentLoaded", function () {
     return;
   }
 
+  const isAndroid = /Android/i.test(navigator.userAgent);
+  var isManuallyStopped = false; // Track if stopping is manual
+
   const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
-  recognition.continuous = true; // Continuously listen to speech
+  recognition.continuous = !isAndroid;
   recognition.interimResults = true; // Show interim results
   recognition.lang = "en-US"; // Set language
 
@@ -50,6 +53,11 @@ document.addEventListener("DOMContentLoaded", function () {
   recognition.onend = function () {
     isRecognizing = false;
     console.log("Recognition has ended");
+
+    if (isAndroid && !isManuallyStopped) {
+      console.log("Restarting recognition for Android.");
+      recognition.start();
+    }
   };
 
   recognition.onerror = function (event) {
@@ -70,6 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function handleStartRecognition() {
     if (!isRecognizing) {
+      isManuallyStopped = true;
       recognition.start();
       drawAudioVisual();
     } else {
