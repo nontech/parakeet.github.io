@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     return;
   }
 
-  var recognition = new webkitSpeechRecognition();
+  const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
   recognition.continuous = true; // Continuously listen to speech
   recognition.interimResults = true; // Show interim results
   recognition.lang = "en-US"; // Set language
@@ -25,6 +25,15 @@ document.addEventListener("DOMContentLoaded", function () {
   recognition.onstart = function () {
     isRecognizing = true;
     console.log("Recognition has started");
+  };
+
+  recognition.onaudioend = function () {
+    console.log("Audio capturing ended");
+  };
+
+  recognition.onend = function () {
+    isRecognizing = false;
+    console.log("Recognition has ended");
   };
 
   recognition.onerror = function (event) {
