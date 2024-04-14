@@ -1,3 +1,18 @@
+// Function to open the modal
+function closeModal() {
+  startRecognition();
+  var modal = document.getElementById("voiceModal");
+  modal.style.display = "none";
+  var logo = document.getElementById("logo");
+  logo.style.background = "none";
+}
+
+window.onload = function () {
+  // Show the modal when the page loads
+  var modal = document.getElementById("voiceModal");
+  modal.style.display = "flex";
+};
+
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 const recognition = new SpeechRecognition();
 recognition.continuous = false;
@@ -102,5 +117,4 @@ document.querySelector(".audio-visualization").addEventListener("click", startRe
 
 window.onload = function () {
   canvas.width = document.querySelector(".audio-visualization").clientWidth;
-  canvas.height = 500; // Set the height as defined in your CSS
 };
