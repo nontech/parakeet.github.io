@@ -16,6 +16,7 @@ html {
 
 .container {
   display: flex;
+  flex-direction: row;
   height: 100%;
 }
 
@@ -157,8 +158,8 @@ html {
 
 #contentImage {
   position: absolute;
-  left: 50%;
   height: 70vh;
+  left: 50%;
   top: 50%;
   translate: -50% -50%;
 }
@@ -209,13 +210,28 @@ html {
 
   #contentImage {
     position: absolute;
-    bottom: 0%;
     height: 40vh;
+    translate: -50% -50%;
+    top: 70%;
   }
 
-  .topLeft {
-    top: 10px;
-    left: 10px;
-    margin-left: 10vw;
+  #contentImage1 {
+    right: 0%;
+    top: 50vh;
+  }
+
+  #contentImage2 {
+    right: 0%;
+    top: 50vh;
+  }
+
+  #contentImage3 {
+    right: 0%;
+    top: 50vh;
+  }
+
+  #contentImage4 {
+    right: 0%;
+    top: 50vh;
   }
 }
