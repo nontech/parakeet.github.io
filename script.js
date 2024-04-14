@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const isAndroid = /Android/i.test(navigator.userAgent);
   console.log("Is Android:", isAndroid);
-  var isManuallyStopped = false; // Track if stopping is manual
 
   const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
   recognition.continuous = !isAndroid;
@@ -55,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
     isRecognizing = false;
     console.log("Recognition has ended");
 
-    if (isAndroid && !isManuallyStopped) {
+    if (isAndroid) {
       console.log("Restarting recognition for Android.");
       recognition.start();
     }
@@ -79,7 +78,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function handleStartRecognition() {
     if (!isRecognizing) {
-      isManuallyStopped = true;
       recognition.start();
       drawAudioVisual();
     } else {
