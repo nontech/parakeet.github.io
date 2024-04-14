@@ -8,6 +8,12 @@ html {
   background: linear-gradient(to right, #00ff7f, #87ceeb);
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 .container {
   display: flex;
   height: 100%;
@@ -31,7 +37,6 @@ html {
   border-radius: 10px;
   text-align: center;
   color: rgb(2154, 214, 214);
-  /* max-width: 80%; */
 }
 
 .modal-content h2 {
@@ -62,10 +67,12 @@ html {
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
+  flex: 0 0 30%;
 }
 
 .right {
   justify-content: center;
+  flex: 0 0 70%;
 }
 
 .instructions {
@@ -90,7 +97,7 @@ html {
   display: flex;
   justify-content: center; /* Center horizontally */
   align-items: center;
-  width: 70%;
+  width: 80%;
   height: 20%;
   padding: 25px;
   box-shadow: 10px 10px 20px #3a3a3a7a, -10px -10px 20px #08080858;
@@ -131,8 +138,84 @@ html {
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2), -5px -5px 15px rgba(255, 255, 255, 0.5);
 }
 
+#contentText {
+  width: 80%;
+  height: auto;
+  padding: 20px;
+  border-radius: 20px;
+  z-index: 1500;
+  font-size: 1.5em;
+  font-style: italic;
+}
+
+/*                                                                                                                                
+    //   ) )                                                                                                                   
+   //___/ /  ___      __      __      ___    __  ___       ___      ___      ___     ( ) __  ___ ( )  ___       __      ___    
+  / ____ / //   ) ) //  ) ) //  ) ) //   ) )  / /        //   ) ) //   ) ) ((   ) ) / /   / /   / / //   ) ) //   ) ) ((   ) ) 
+ //       //   / / //      //      //   / /  / /        //___/ / //   / /   \ \    / /   / /   / / //   / / //   / /   \ \     
+//       ((___( ( //      //      ((___/ /  / /        //       ((___/ / //   ) ) / /   / /   / / ((___/ / //   / / //   ) )    */
+
+#contentImage {
+  position: absolute;
+  left: 50%;
+  height: 70vh;
+  top: 50%;
+  translate: -50% -50%;
+}
+
+.parakeet-img {
+  position: absolute;
+  height: 40%;
+  opacity: 1;
+  transition: opacity 2s ease;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+#contentImage1 {
+  left: 30%;
+  top: 0%;
+}
+
+#contentImage2 {
+  right: 0%;
+  top: 0%;
+}
+
+#contentImage3 {
+  right: 0%;
+  bottom: 0%;
+}
+
+#contentImage4 {
+  left: 0%;
+  bottom: 0%;
+}
+
+/* 
+.##...##...####...#####...######..##......######.
+.###.###..##..##..##..##....##....##......##.....
+.##.#.##..##..##..#####.....##....##......####...
+.##...##..##..##..##..##....##....##......##.....
+.##...##...####...#####...######..######..######.
+................................................. */
+
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
+  }
+
+  #contentImage {
+    position: absolute;
+    bottom: 0%;
+    height: 40vh;
+  }
+
+  .topLeft {
+    top: 10px;
+    left: 10px;
+    margin-left: 10vw;
   }
 }

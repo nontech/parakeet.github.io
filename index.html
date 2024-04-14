@@ -13,13 +13,13 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- Modal Overlay -->
     <div id="voiceModal" class="modal-overlay">
       <div class="modal-content">
           <h2>To navigate this website you will be using your own voice</h2>
-          <button onclick="closeModal()">Click Start to Begin</button>
+          <button onclick="closeModal()">Click Here to Begin</button>
       </div>
     </div>
+    <img src="img/parakeet_0.png" class="parakeet-img" id="contentImage" alt="Initial Image" />
     <div class="container">
       <div class="left">
         <h1 id="logo">parakeet</h1>
@@ -32,13 +32,19 @@
             <li>Who we are</li>
         </ul>
         </p>
-        <!-- <button onclick="startRecognition()">start</button> -->
         <div class="audio-visualization">
             <canvas id="audioCanvas"></canvas>
         </div>
       </div>
       <div class="right">
-        <div class="content">Speak to see the content here...</div>
+        <div id="contentText" style="display: none;">
+          <h1 id="contentTitle"></h1>
+          <p id="contentBody"></p>
+        </div>
+        <img src="img/parakeet_1.png" class="parakeet-img" id="contentImage1" alt="Initial Image" />
+        <img src="img/parakeet_2.png" class="parakeet-img" id="contentImage2" alt="Initial Image" />
+        <img src="img/parakeet_3.png" class="parakeet-img" id="contentImage3" alt="Initial Image" />
+        <img src="img/parakeet_4.png" class="parakeet-img" id="contentImage4" alt="Initial Image" />
       </div>
     </div>
     <script src="script.js"></script>
