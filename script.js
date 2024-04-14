@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   const isAndroid = /Android/i.test(navigator.userAgent);
+  console.log("Is Android:", isAndroid);
   var isManuallyStopped = false; // Track if stopping is manual
 
   const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
