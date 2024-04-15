@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function handleStartRecognition() {
     if (!isRecognizing) {
       recognition.start();
-      drawAudioVisual();
+      // drawAudioVisual();
     } else {
       console.log("Recognition is already running.");
     }
