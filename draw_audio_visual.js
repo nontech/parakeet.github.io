@@ -5,9 +5,7 @@ let dataArray;
 let bufferLength;
 
 function draw() {
-    const contentDiv = document.querySelector(".content");
-    const canvas = document.getElementById("audioCanvas");
-    const ctx = canvas.getContext("2d");
+  const canvas = document.getElementById("audioCanvas");
 
     requestAnimationFrame(draw);
     ctx.clearRect(0, 0, canvas.width, canvas.height);
