@@ -50,7 +50,7 @@ export function handleVoice(command) {
       break;
     case "contact":
       contentTitle.textContent = "Connect With Us";
-      contentBody.textContent = "Have questions or want to know more? Our team is just a message away. Contact us via [contact@email.com]";
+      contentBody.textContent = "Have questions or want to know more? Our team is just a message away. Contact us via parakeet.lang@gmail.com";
       contentImage3.classList.remove("hidden");
       contentImage1.classList.add("hidden");
       contentImage2.classList.add("hidden");
