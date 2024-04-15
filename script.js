@@ -10,6 +10,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const isAndroid = /Android/i.test(navigator.userAgent);
   console.log("Is Android:", isAndroid);
+  if (isAndroid) {
+    let visualization_box = document.getElementById("visualization-box");
+    visualization_box.style.visibility = "hidden";
+  }
 
   const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
   recognition.continuous = !isAndroid;
@@ -75,7 +79,9 @@ document.addEventListener("DOMContentLoaded", function () {
   function handleStartRecognition() {
     if (!isRecognizing) {
       recognition.start();
-      // drawAudioVisual();
+      if (!isAndroid) {
+        drawAudioVisual();
+      }
     } else {
       console.log("Recognition is already running.");
     }
