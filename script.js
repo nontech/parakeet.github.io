@@ -8,11 +8,11 @@ document.addEventListener("DOMContentLoaded", function () {
     return;
   }
 
-  // const isAndroid = /Android/i.test(navigator.userAgent);
-  // console.log("Is Android:", isAndroid);
+  const isAndroid = /Android/i.test(navigator.userAgent);
+  console.log("Is Android:", isAndroid);
 
   const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
-  recognition.continuous = true;
+  recognition.continuous = !isAndroid;
   recognition.interimResults = true; // Show interim results
   recognition.lang = "en-US"; // Set language
 
@@ -50,10 +50,10 @@ document.addEventListener("DOMContentLoaded", function () {
     isRecognizing = false;
     console.log("Recognition has ended");
 
-    // if (isAndroid) {
-    //   console.log("Restarting recognition for Android.");
-    //   recognition.start();
-    // }
+    if (isAndroid) {
+      console.log("Restarting recognition for Android.");
+      recognition.start();
+    }
   };
 
   recognition.onerror = function (event) {
