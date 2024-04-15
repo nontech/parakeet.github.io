@@ -208,11 +208,15 @@ html {
     flex-direction: column;
   }
 
+  .right {
+    margin-top: 10vh;
+  }
+
   #contentImage {
     position: absolute;
     height: 40vh;
     translate: -50% -50%;
-    top: 70%;
+    top: 90%;
   }
 
   #contentImage1 {
