@@ -5,35 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Parakeet</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
 
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div id="voiceModal" class="modal-overlay">
       <div class="modal-content">
-          <h2>To navigate this website you will be using your own voice</h2>
-          <button id="startToBeginButton" onclick="closeModal()">Click Start to Begin</button>
+        <h2>To navigate this website you will be using your own voice</h2>
+        <button id="startToBeginButton" onclick="closeModal()">Click Start to Begin</button>
       </div>
     </div>
     <img src="img/parakeet_0.png" class="parakeet-img" id="contentImage" alt="Initial Image" />
     <div class="container">
       <div class="left">
         <h1 id="logo">parakeet</h1>
-        <p class="instructions">
-          Say out loud one of the following words to navigate:
-          <ul class="command-list">
-            <li>Go home</li>
-            <li>Waiting list</li>
-            <li>Contact</li>
-            <li>Who we are</li>
+        <p class="instructions">Say out loud one of the following words to navigate:</p>
+        <ul class="command-list">
+          <li>Go home</li>
+          <li>Waiting list</li>
+          <li>Contact</li>
+          <li>Who we are</li>
         </ul>
-        </p>
         <div class="audio-visualization">
-            <canvas id="audioCanvas"></canvas>
+          <canvas id="audioCanvas"></canvas>
         </div>
       </div>
       <div class="right">
@@ -41,7 +41,7 @@
         <img src="img/parakeet_2.png" class="parakeet-img hidden" id="contentImage2" alt="Initial Image" />
         <img src="img/parakeet_3.png" class="parakeet-img hidden" id="contentImage3" alt="Initial Image" />
         <img src="img/parakeet_4.png" class="parakeet-img hidden" id="contentImage4" alt="Initial Image" />
-        <div id="contentText" style="display: none;">
+        <div id="contentText" style="display: none">
           <h1 id="contentTitle"></h1>
           <p id="contentBody"></p>
         </div>
