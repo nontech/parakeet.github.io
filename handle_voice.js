@@ -95,10 +95,10 @@ export function handleVoice(command) {
         <br>
         <form id = "contactForm" action="https://docs.google.com/forms/u/5/d/182IvO9Cf05t-krEHsBKH9eBuM7D5ZX9b_qsNi4NhC1M/formResponse">
           <label for="email">Your email:</label><br>
-          <input type="email" id="email" name="entry.2089760214" required><br>
+          <input class="form-element" type="email" id="email" name="entry.2089760214" required><br>
           <label for="message">Message:</label><br>
-          <textarea id="message" name="entry.785871569" required></textarea><br>
-          <input type="submit" value="Send message">
+          <textarea class="form-element" id="message" name="entry.785871569" required></textarea><br>
+          <input class="form-element" type="submit" value="Send message">
         </form>
       `;
       document.getElementById("contactForm").addEventListener('submit', function(event) {

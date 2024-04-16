@@ -140,6 +140,7 @@ html {
   z-index: 1500;
   font-size: 1.5em;
   font-style: italic;
+  font-weight: 300;
 }
 
 /*                                                                                                                                
@@ -237,20 +238,23 @@ button.active {
 #contactForm {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   width: 100%;
-  padding: 20px;
+  padding-top: 40px;
 }
 
-#contactForm input,
-#contactForm textarea,
-#contactForm select {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+#contactForm input {
+  width: 220px;
+}
+
+.form-element {
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2), -5px -5px 15px rgba(255, 255, 255, 0.5);
 }
 
 /* 
