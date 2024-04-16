@@ -223,6 +223,18 @@ html {
   }
 }
 
+button.nav{
+  background: linear-gradient(to right, #39a5d0, #87ceeb);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+}
+
+button.active{
+  color: white;
+}
+
 /* 
 .##...##...####...#####...######..##......######.
 .###.###..##..##..##..##....##....##......##.....

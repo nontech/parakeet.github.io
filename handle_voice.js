@@ -1,10 +1,41 @@
+
+
+//containers to show the content
 let contentImage = document.getElementById("contentImage");
 let contentImage1 = document.getElementById("contentImage1");
 let contentImage2 = document.getElementById("contentImage2");
 let contentImage3 = document.getElementById("contentImage3");
 let contentImage4 = document.getElementById("contentImage4");
 
+//navigation buttons
+let homeButton = document.getElementById("homeButton");
+let waitingListButton = document.getElementById("waitingListButton");
+let contactButton = document.getElementById("contactButton");
+let whoWeAreButton = document.getElementById("whoWeAreButton");
+
 let first_command = true;
+
+//linking clicking on the buttons to the voice commands
+document.getElementById('homeButton').addEventListener('click', function() {
+  handleVoice('home');
+});
+
+document.getElementById('waitingListButton').addEventListener('click', function() {
+  handleVoice('waiting list');
+});
+
+document.getElementById('contactButton').addEventListener('click', function() {
+  handleVoice('contact');
+});
+
+document.getElementById('whoWeAreButton').addEventListener('click', function() {
+  handleVoice('who we are');
+});
+
+function activateVoiceCommand(command) {
+  // Your code to activate the voice command goes here
+  console.log(`Activating voice command: ${command}`);
+}
 
 export function handleVoice(command) {
   let contentText = document.getElementById("contentText");
@@ -34,6 +65,11 @@ export function handleVoice(command) {
             </ul>
             `
       ;
+      homeButton.classList.add("active");
+      waitingListButton.classList.remove("active");
+      contactButton.classList.remove("active");
+      whoWeAreButton.classList.remove("active");
+
       contentImage1.classList.remove("hidden");
       contentImage2.classList.add("hidden");
       contentImage3.classList.add("hidden");
@@ -43,6 +79,13 @@ export function handleVoice(command) {
     case "waiting list":
       contentTitle.textContent = "Get Early Access";
       contentBody.textContent = "Ready to change how you learn languages? Join our waiting list";
+
+      homeButton.classList.remove("active");
+      waitingListButton.classList.add("active");
+      contactButton.classList.remove("active");
+      whoWeAreButton.classList.remove("active");
+
+
       contentImage2.classList.remove("hidden");
       contentImage1.classList.add("hidden");
       contentImage3.classList.add("hidden");
@@ -52,6 +95,12 @@ export function handleVoice(command) {
     case "contact":
       contentTitle.textContent = "Connect With Us";
       contentBody.textContent = "Have questions or want to know more? Our team is just a message away. Contact us via parakeet.lang@gmail.com";
+      
+      homeButton.classList.remove("active");
+      waitingListButton.classList.remove("active");
+      contactButton.classList.add("active");
+      whoWeAreButton.classList.remove("active");
+
       contentImage3.classList.remove("hidden");
       contentImage1.classList.add("hidden");
       contentImage2.classList.add("hidden");
@@ -82,6 +131,12 @@ export function handleVoice(command) {
         </div>
         
         `;
+      
+      homeButton.classList.remove("active");
+      waitingListButton.classList.remove("active");
+      contactButton.classList.remove("active");
+      whoWeAreButton.classList.add("active");
+
       contentImage4.classList.remove("hidden");
       contentImage1.classList.add("hidden");
       contentImage2.classList.add("hidden");
