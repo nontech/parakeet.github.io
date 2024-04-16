@@ -217,7 +217,10 @@ html {
 
 .founder a {
   color: #000;
-  text-decoration: underline;
+  .founder a {
+    color: #000;
+    text-decoration: underline;
+  }
 }
 
 /* 

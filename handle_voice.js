@@ -65,19 +65,19 @@ export function handleVoice(command) {
         <div class="founders">
           <div class="founder">
             <img src="img/founders/alejh.png" alt="Founder 1" class="founder-image">
-            <a href = "https://www.linkedin.com/in/alejandrocamus/"> <p class="founder-name">Alejandro</p> </a>
+            <a href = "https://www.linkedin.com/in/alejandrocamus/" target = "_blank"> <p class="founder-name">Alejandro</p> </a>
           </div>
           <div class="founder">
             <img src="img/founders/mukesh.jpeg" alt="Founder 2" class="founder-image">
-            <a href = "https://www.linkedin.com/in/mukesh-jaiswal-23b5b0a9/"><p class="founder-name">Mukesh</p></a>
+            <a href = "https://www.linkedin.com/in/mukesh-jaiswal-23b5b0a9/" target = "_blank"><p class="founder-name">Mukesh</p></a>
           </div>
           <div class="founder">
             <img src="img/founders/burcu.jpeg" alt="Founder 3" class="founder-image">
-            <a href = "https://www.linkedin.com/in/burcu-baycan-900926176/"><p class="founder-name">Burcu</p></a>
+            <a href = "https://www.linkedin.com/in/burcu-baycan-900926176/" target = "_blank"><p class="founder-name">Burcu</p></a>
           </div>
           <div class="founder">
             <img src="img/founders/aman.png" alt="Founder 4" class="founder-image">
-            <a href = "https://www.linkedin.com/in/aman-jaiswal-5b3354178/"><p class="founder-name">Aman</p></a>
+            <a href = "https://www.linkedin.com/in/aman-jaiswal-5b3354178/" target = "_blank"><p class="founder-name">Aman</p></a>
           </div>
         </div>
         
