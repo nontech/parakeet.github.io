@@ -1,5 +1,3 @@
-
-
 //containers to show the content
 let contentImage = document.getElementById("contentImage");
 let contentImage1 = document.getElementById("contentImage1");
@@ -16,22 +14,21 @@ let whoWeAreButton = document.getElementById("whoWeAreButton");
 let first_command = true;
 
 //linking clicking on the buttons to the voice commands
-document.getElementById('homeButton').addEventListener('click', function() {
-  handleVoice('home');
+document.getElementById("homeButton").addEventListener("click", function () {
+  handleVoice("home");
 });
 
-document.getElementById('waitingListButton').addEventListener('click', function() {
-  handleVoice('waiting list');
+document.getElementById("waitingListButton").addEventListener("click", function () {
+  handleVoice("waiting list");
 });
 
-document.getElementById('contactButton').addEventListener('click', function() {
-  handleVoice('contact');
+document.getElementById("contactButton").addEventListener("click", function () {
+  handleVoice("contact");
 });
 
-document.getElementById('whoWeAreButton').addEventListener('click', function() {
-  handleVoice('who we are');
+document.getElementById("whoWeAreButton").addEventListener("click", function () {
+  handleVoice("who we are");
 });
-
 
 export function handleVoice(command) {
   let contentText = document.getElementById("contentText");
@@ -59,8 +56,7 @@ export function handleVoice(command) {
                 <li>Forget about screens, tedious grammar drills, and endless repetition without context.</li>
                 <li>Immerse yourself in practical, everyday conversations, just like a native speaker would.</li>
             </ul>
-            `
-      ;
+            `;
       homeButton.classList.add("active");
       waitingListButton.classList.remove("active");
       contactButton.classList.remove("active");
@@ -81,7 +77,6 @@ export function handleVoice(command) {
       contactButton.classList.remove("active");
       whoWeAreButton.classList.remove("active");
 
-
       contentImage2.classList.remove("hidden");
       contentImage1.classList.add("hidden");
       contentImage3.classList.add("hidden");
@@ -101,29 +96,29 @@ export function handleVoice(command) {
           <input class="form-element" type="submit" value="Send message">
         </form>
       `;
-      document.getElementById("contactForm").addEventListener('submit', function(event) {
+      document.getElementById("contactForm").addEventListener("submit", function (event) {
         event.preventDefault();
-      
+
         // Create an iframe
-        var iframe = document.createElement('iframe');
-        iframe.style.display = 'none';
-        iframe.name = 'hidden_iframe'; // Set a name for the iframe
+        var iframe = document.createElement("iframe");
+        iframe.style.display = "none";
+        iframe.name = "hidden_iframe"; // Set a name for the iframe
         document.body.appendChild(iframe);
-      
+
         // Set the iframe's name as the form's target
-        this.target = 'hidden_iframe'; // Use the iframe's name as the form's target
-      
+        this.target = "hidden_iframe"; // Use the iframe's name as the form's target
+
         // Submit the form
         this.submit();
-      
+
         // Reset the form
         this.reset();
-      
+
         // Display the message
         displayMessage();
-      
+
         // Remove the iframe after a delay to ensure the form submission is complete
-        setTimeout(function() {
+        setTimeout(function () {
           document.body.removeChild(iframe);
         }, 1000);
       });
@@ -131,7 +126,7 @@ export function handleVoice(command) {
       function displayMessage() {
         alert("Your message has been sent. We will get back to you soon!");
       }
-      
+
       homeButton.classList.remove("active");
       waitingListButton.classList.remove("active");
       contactButton.classList.add("active");
@@ -145,8 +140,7 @@ export function handleVoice(command) {
       break;
     case "who we are":
       contentTitle.textContent = "Our Story";
-      contentBody.innerHTML =
-        `We are technologists, and avid learners who believe in a world where language learning is as natural and engaging as conversation itself. Founded on the principles of cognitive science and AI, parakeet is designed to make you fluent by leveraging the natural methods that helped you learn your mother tongue.
+      contentBody.innerHTML = `We are technologists, and avid learners who believe in a world where language learning is as natural and engaging as conversation itself. Founded on the principles of cognitive science and AI, parakeet is designed to make you fluent by leveraging the natural methods that helped you learn your mother tongue.
         <div class="founders">
           <div class="founder">
             <img src="img/founders/alejh.png" alt="Founder 1" class="founder-image">
@@ -167,7 +161,7 @@ export function handleVoice(command) {
         </div>
         
         `;
-      
+
       homeButton.classList.remove("active");
       waitingListButton.classList.remove("active");
       contactButton.classList.remove("active");
