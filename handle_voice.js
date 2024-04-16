@@ -32,10 +32,6 @@ document.getElementById('whoWeAreButton').addEventListener('click', function() {
   handleVoice('who we are');
 });
 
-function activateVoiceCommand(command) {
-  // Your code to activate the voice command goes here
-  console.log(`Activating voice command: ${command}`);
-}
 
 export function handleVoice(command) {
   let contentText = document.getElementById("contentText");
@@ -94,7 +90,47 @@ export function handleVoice(command) {
       break;
     case "contact":
       contentTitle.textContent = "Connect With Us";
-      contentBody.textContent = "Have questions or want to know more? Our team is just a message away. Contact us via parakeet.lang@gmail.com";
+      contentBody.innerHTML = `
+      Have questions or want to know more? Our team is just a message away. Contact us via the form
+        <br>
+        <form id = "contactForm" action="https://docs.google.com/forms/u/5/d/182IvO9Cf05t-krEHsBKH9eBuM7D5ZX9b_qsNi4NhC1M/formResponse">
+          <label for="email">Your email:</label><br>
+          <input type="email" id="email" name="entry.2089760214" required><br>
+          <label for="message">Message:</label><br>
+          <textarea id="message" name="entry.785871569" required></textarea><br>
+          <input type="submit" value="Send message">
+        </form>
+      `;
+      document.getElementById("contactForm").addEventListener('submit', function(event) {
+        event.preventDefault();
+      
+        // Create an iframe
+        var iframe = document.createElement('iframe');
+        iframe.style.display = 'none';
+        iframe.name = 'hidden_iframe'; // Set a name for the iframe
+        document.body.appendChild(iframe);
+      
+        // Set the iframe's name as the form's target
+        this.target = 'hidden_iframe'; // Use the iframe's name as the form's target
+      
+        // Submit the form
+        this.submit();
+      
+        // Reset the form
+        this.reset();
+      
+        // Display the message
+        displayMessage();
+      
+        // Remove the iframe after a delay to ensure the form submission is complete
+        setTimeout(function() {
+          document.body.removeChild(iframe);
+        }, 1000);
+      });
+
+      function displayMessage() {
+        alert("Your message has been sent. We will get back to you soon!");
+      }
       
       homeButton.classList.remove("active");
       waitingListButton.classList.remove("active");
