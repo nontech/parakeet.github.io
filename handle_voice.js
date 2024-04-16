@@ -241,7 +241,6 @@ export function handleVoice(command) {
     default:
       console.log("Command not recognized");
       if (first_command) {
-        contentTitle.textContent = "Unlock the Natural Way of Language Learning";
         contentBody.innerHTML = `
             At parakeet, we revolutionize language learning by mimicking the natural learning process.
             <ul>
