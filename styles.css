@@ -132,13 +132,6 @@ html {
   gap: 10px;
 }
 
-.command-list li {
-  background: rgba(255, 255, 255, 0.8);
-  padding: 10px 20px;
-  border-radius: 5px;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2), -5px -5px 15px rgba(255, 255, 255, 0.5);
-}
-
 #contentText {
   width: 80%;
   height: auto;
@@ -223,16 +216,22 @@ html {
   }
 }
 
-button.nav{
-  background: linear-gradient(to right, #39a5d0, #87ceeb);
+button.nav {
   border: none;
   border-radius: 5px;
   cursor: pointer;
   outline: none;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2), -5px -5px 15px rgba(255, 255, 255, 0.5);
 }
 
-button.active{
-  color: white;
+button.active {
+  /* color: white; */
+  /* background: rgba(23, 178, 196, 0.8); */
+  /* background: #00b7ff; */
+  box-shadow: 5px 5px 15px rgb(0, 81, 255), -5px -5px 15px rgba(43, 6, 255, 0.5);
 }
 
 #contactForm {
@@ -253,7 +252,6 @@ button.active{
   border: 1px solid #ccc;
   border-radius: 4px;
 }
-
 
 /* 
 .##...##...####...#####...######..##......######.
