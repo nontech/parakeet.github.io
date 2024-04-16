@@ -53,11 +53,8 @@ document.addEventListener("DOMContentLoaded", function () {
   recognition.onend = function () {
     isRecognizing = false;
     console.log("Recognition has ended");
-
-    if (isAndroid) {
-      console.log("Restarting recognition for Android.");
-      recognition.start();
-    }
+    console.log("Restarting recognition");
+    recognition.start();
   };
 
   recognition.onerror = function (event) {
