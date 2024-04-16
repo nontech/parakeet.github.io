@@ -32,7 +32,8 @@ export function handleVoice(command) {
                 <li>Forget about screens, tedious grammar drills, and endless repetition without context.</li>
                 <li>Immerse yourself in practical, everyday conversations, just like a native speaker would.</li>
             </ul>
-        `;
+            `
+      ;
       contentImage1.classList.remove("hidden");
       contentImage2.classList.add("hidden");
       contentImage3.classList.add("hidden");
@@ -59,8 +60,28 @@ export function handleVoice(command) {
       break;
     case "who we are":
       contentTitle.textContent = "Our Story";
-      contentBody.textContent =
-        "We are technologists, and avid learners who believe in a world where language learning is as natural and engaging as conversation itself. Founded on the principles of cognitive science and AI, parakeet is designed to make you fluent by leveraging the natural methods that helped you learn your mother tongue.";
+      contentBody.innerHTML =
+        `We are technologists, and avid learners who believe in a world where language learning is as natural and engaging as conversation itself. Founded on the principles of cognitive science and AI, parakeet is designed to make you fluent by leveraging the natural methods that helped you learn your mother tongue.
+        <div class="founders">
+          <div class="founder">
+            <img src="img/founders/alejh.png" alt="Founder 1" class="founder-image">
+            <a href = "https://www.linkedin.com/in/alejandrocamus/"> <p class="founder-name">Alejandro</p> </a>
+          </div>
+          <div class="founder">
+            <img src="img/founders/mukesh.jpeg" alt="Founder 2" class="founder-image">
+            <a href = "https://www.linkedin.com/in/mukesh-jaiswal-23b5b0a9/"><p class="founder-name">Mukesh</p></a>
+          </div>
+          <div class="founder">
+            <img src="img/founders/burcu.jpeg" alt="Founder 3" class="founder-image">
+            <a href = "https://www.linkedin.com/in/burcu-baycan-900926176/"><p class="founder-name">Burcu</p></a>
+          </div>
+          <div class="founder">
+            <img src="img/founders/aman.png" alt="Founder 4" class="founder-image">
+            <a href = "https://www.linkedin.com/in/aman-jaiswal-5b3354178/"><p class="founder-name">Aman</p></a>
+          </div>
+        </div>
+        
+        `;
       contentImage4.classList.remove("hidden");
       contentImage1.classList.add("hidden");
       contentImage2.classList.add("hidden");
