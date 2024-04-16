@@ -74,7 +74,34 @@ export function handleVoice(command) {
       break;
     case "waiting list":
       contentTitle.textContent = "Get Early Access";
-      contentBody.textContent = "Ready to change how you learn languages? Join our waiting list";
+      contentBody.innerHTML = `
+      Ready to change how you learn languages? Join our waiting list
+        <br>
+        <form id = "subscriptionForm" action="https://docs.google.com/forms/u/5/d/e/1FAIpQLSdDx3ou_lS9Q7VIXvBfXF1qEmU4SUlPpdKVWaksdy3_QTmn7g/formResponse">
+          <label for="email">Your email:</label><br>
+          <input type="email" id="emailSubscription" name="emailAddress" required><br>
+          <input type="submit" value="Subscribe">
+        </form>
+      `;
+      document.getElementById("subscriptionForm").addEventListener("submit", function (e) {
+        e.preventDefault(); // Stop the form from submitting the traditional way
+      
+        var formData = new FormData(this);
+      
+        fetch(this.action, {
+          method: "POST",
+          body: formData,
+          mode: "no-cors", // Google Forms require no-cors mode for cross-origin requests
+        })
+          .then((response) => {
+            alert("You have been added to the waiting list! We will notify you when we are ready to launch.");
+          })
+          .then((data) => {
+            document.getElementById("emailSubscription").value = "";
+          })
+          .catch((error) => console.error("Error:", error));
+      });
+
 
       homeButton.classList.remove("active");
       waitingListButton.classList.add("active");
@@ -95,42 +122,31 @@ export function handleVoice(command) {
         <br>
         <form id = "contactForm" action="https://docs.google.com/forms/u/5/d/182IvO9Cf05t-krEHsBKH9eBuM7D5ZX9b_qsNi4NhC1M/formResponse">
           <label for="email">Your email:</label><br>
-          <input type="email" id="email" name="entry.2089760214" required><br>
+          <input type="email" id="email" name="emailAddress" required><br>
           <label for="message">Message:</label><br>
           <textarea id="message" name="entry.785871569" required></textarea><br>
           <input type="submit" value="Send message">
         </form>
       `;
-      document.getElementById("contactForm").addEventListener('submit', function(event) {
-        event.preventDefault();
+      document.getElementById("contactForm").addEventListener("submit", function (e) {
+        e.preventDefault(); // Stop the form from submitting the traditional way
       
-        // Create an iframe
-        var iframe = document.createElement('iframe');
-        iframe.style.display = 'none';
-        iframe.name = 'hidden_iframe'; // Set a name for the iframe
-        document.body.appendChild(iframe);
+        var formData = new FormData(this);
       
-        // Set the iframe's name as the form's target
-        this.target = 'hidden_iframe'; // Use the iframe's name as the form's target
-      
-        // Submit the form
-        this.submit();
-      
-        // Reset the form
-        this.reset();
-      
-        // Display the message
-        displayMessage();
-      
-        // Remove the iframe after a delay to ensure the form submission is complete
-        setTimeout(function() {
-          document.body.removeChild(iframe);
-        }, 1000);
+        fetch(this.action, {
+          method: "POST",
+          body: formData,
+          mode: "no-cors", // Google Forms require no-cors mode for cross-origin requests
+        })
+          .then((response) => {
+            alert("Your message has been sent! We will get back to you soon.");
+          })
+          .then((data) => {
+            document.getElementById("email").value = "";
+            document.getElementById("message").value = "";
+          })
+          .catch((error) => console.error("Error:", error));
       });
-
-      function displayMessage() {
-        alert("Your message has been sent. We will get back to you soon!");
-      }
       
       homeButton.classList.remove("active");
       waitingListButton.classList.remove("active");
