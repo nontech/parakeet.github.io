@@ -242,6 +242,16 @@ button.active {
   padding-top: 40px;
 }
 
+#subscriptionForm {
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+}
+
+#subscriptionForm input {
+  width: 220px;
+}
+
 #contactForm input {
   width: 220px;
 }

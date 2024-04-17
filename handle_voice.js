@@ -82,13 +82,15 @@ export function handleVoice(command) {
           <div>Subscribers gain early access to our beta, special launch promotions, and insights into our AI-driven approach.</div>
 
           <div>Join Our Exclusive Waiting List</div>
-      
+
+          <div>Ready to change how you learn languages? Join our waiting list</div>
+
           <br>
-          <form id = "subscriptionForm" action="https://docs.google.com/forms/u/5/d/e/1FAIpQLSdDx3ou_lS9Q7VIXvBfXF1qEmU4SUlPpdKVWaksdy3_QTmn7g/formResponse">
-            <label for="email">Your email:</label><br>
-            <input type="email" id="emailSubscription" name="emailAddress" required><br>
-            <input type="submit" value="Subscribe">
-          </form>
+          <form id="subscriptionForm" action="https://docs.google.com/forms/u/5/d/e/1FAIpQLSdDx3ou_lS9Q7VIXvBfXF1qEmU4SUlPpdKVWaksdy3_QTmn7g/formResponse">
+          <label for="email">Your email:</label><br>
+          <input class="form-element" type="email" id="emailSubscription" name="emailAddress" required><br>
+          <input class="form-element" type="submit" value="Subscribe">
+        </form>
         </div>
       `;
 
@@ -136,7 +138,7 @@ export function handleVoice(command) {
         <br>
         <form id = "contactForm" action="https://docs.google.com/forms/u/5/d/182IvO9Cf05t-krEHsBKH9eBuM7D5ZX9b_qsNi4NhC1M/formResponse">
           <label for="email">Your email:</label><br>
-          <input type="email" id="email" name="emailAddress" required><br>
+          <input class="form-element" type="email" id="email" name="emailAddress" required><br>
           <label for="message">Message:</label><br>
           <textarea class="form-element" id="message" name="entry.785871569" required></textarea><br>
           <input class="form-element" type="submit" value="Send message">
