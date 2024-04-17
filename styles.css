@@ -72,7 +72,7 @@ html {
 }
 
 .right {
-  justify-content: center;
+  justify-content: flex-start;
   flex: 0 0 70%;
 }
 
@@ -112,14 +112,6 @@ html {
   z-index: 900;
 }
 
-.right .content {
-  border-radius: 20px;
-  padding: 20px;
-  width: 80%;
-  height: 60%;
-  text-align: center;
-}
-
 .command-list {
   list-style-type: none;
   padding: 0;
@@ -129,7 +121,12 @@ html {
   gap: 10px;
 }
 
-#contentText {
+#contentTitle {
+  text-align: center;
+}
+
+#contentMain {
+  margin-top: 20vh;
   width: 80%;
   height: auto;
   padding: 20px;
@@ -140,10 +137,9 @@ html {
   font-weight: 300;
 }
 
-.content-container {
+.content-container-home {
   max-width: 800px;
   text-align: center;
-  /* margin: auto; */
   /* padding: 20px; */
 }
 p {
@@ -215,6 +211,7 @@ p {
   display: flex;
   justify-content: space-around;
   margin-top: 20px;
+  flex-wrap: wrap;
 }
 
 .founder {
@@ -222,21 +219,36 @@ p {
   flex-direction: column;
   align-items: center;
   margin: 20px;
+  height: 350px;
+  max-width: 200px;
+  justify-content: space-between;
 }
 
 .founder img {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  margin: 10px;
 }
 
-.founder a {
-  color: #000;
-  .founder a {
-    color: #000;
-    text-decoration: underline;
-  }
+.founder-name {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.languages-known,
+.languages-wishlist {
+  font-size: 14px;
+  font-style: normal;
+  height: 20px;
+  text-align: left;
+  align-self: flex-start;
+}
+
+.linkedin-icon {
+  fill: #0077b5; /* LinkedIn color */
+  width: 44px;
+  height: 44px;
 }
 
 /* _  _  _  _  _                                        
@@ -269,13 +281,11 @@ button.active {
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding-top: 40px;
 }
 
 #subscriptionForm {
   display: flex;
   flex-direction: column;
-  padding-top: 40px;
 }
 
 #subscriptionForm input {
@@ -340,5 +350,14 @@ button.active {
   #contentImage4 {
     right: 0%;
     top: 60vh;
+  }
+
+  .founders {
+    flex-direction: column;
+  }
+
+  .founder {
+    width: 100%;
+    max-width: none;
   }
 }
