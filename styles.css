@@ -18,6 +18,7 @@ html {
   display: flex;
   flex-direction: row;
   height: 100%;
+  padding: 0px 0px 0px 50px;
 }
 
 .modal-overlay {
@@ -72,7 +73,7 @@ html {
 }
 
 .right {
-  justify-content: center;
+  justify-content: flex-start;
   flex: 0 0 70%;
 }
 
@@ -80,13 +81,15 @@ html {
   text-align: center;
 }
 
-#logo {
+.logo {
   font-family: "Montserrat", sans-serif;
   font-family: "Raleway", sans-serif;
-  font-weight: 800;
   font-style: italic;
+  font-weight: 800;
+}
+
+#logo {
   font-size: 4em;
-  color: "black";
   background: linear-gradient(to right, #00ff7f, #87ceeb);
   z-index: 1100;
   margin: 60px;
@@ -110,17 +113,6 @@ html {
   height: 80%;
   display: block;
   z-index: 900;
-  /* Center vertically and horizontally */
-}
-
-.right .content {
-  /* background: #e0e0e0; */
-  /* box-shadow: 10px 10px 20px #3a3a3a7a, -10px -10px 20px #08080858; */
-  border-radius: 20px;
-  padding: 20px;
-  width: 80%;
-  height: 60%;
-  text-align: center;
 }
 
 .command-list {
@@ -132,7 +124,12 @@ html {
   gap: 10px;
 }
 
-#contentText {
+#contentTitle {
+  text-align: center;
+}
+
+#contentMain {
+  margin-top: 20vh;
   width: 80%;
   height: auto;
   padding: 20px;
@@ -141,6 +138,18 @@ html {
   font-size: 1.5em;
   font-style: italic;
   font-weight: 300;
+}
+
+.content-container-home {
+  text-align: center;
+}
+
+p {
+  margin: 15px 0;
+}
+
+.bold {
+  font-weight: bold;
 }
 
 /*                                                                                                                                
@@ -171,7 +180,7 @@ html {
 
 #contentImage1 {
   left: 30%;
-  top: 0%;
+  bottom: 0%;
 }
 
 #contentImage2 {
@@ -189,10 +198,23 @@ html {
   bottom: 0%;
 }
 
+/*                                                                                                                                  
+                                               ,,                        ,,                                                      
+`7MM"""YMM                                   `7MM                        db                                                      
+  MM    `7                                     MM                                                                                
+  MM   d  ,pW"Wq.`7MM  `7MM  `7MMpMMMb.   ,M""bMM  .gP"Ya `7Mb,od8     `7MM  `7MMpMMMb.pMMMb.   ,6"Yb.  .P"Ybmmm .gP"Ya  ,pP"Ybd 
+  MM""MM 6W'   `Wb MM    MM    MM    MM ,AP    MM ,M'   Yb  MM' "'       MM    MM    MM    MM  8)   MM :MI  I8  ,M'   Yb 8I   `" 
+  MM   Y 8M     M8 MM    MM    MM    MM 8MI    MM 8M""""""  MM           MM    MM    MM    MM   ,pm9MM  WmmmP"  8M"""""" `YMMMa. 
+  MM     YA.   ,A9 MM    MM    MM    MM `Mb    MM YM.    ,  MM           MM    MM    MM    MM  8M   MM 8M       YM.    , L.   I8 
+.JMML.    `Ybmd9'  `Mbod"YML..JMML  JMML.`Wbmd"MML.`Mbmmd'.JMML.       .JMML..JMML  JMML  JMML.`Moo9^Yo.YMMMMMb  `Mbmmd' M9mmmP' 
+                                                                                                       6'     dP                 
+                                                                                                       Ybmmmd'                    */
+
 .founders {
   display: flex;
   justify-content: space-around;
   margin-top: 20px;
+  flex-wrap: wrap;
 }
 
 .founder {
@@ -200,22 +222,54 @@ html {
   flex-direction: column;
   align-items: center;
   margin: 20px;
+  height: 350px;
+  max-width: 200px;
+  justify-content: space-between;
 }
 
 .founder img {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  margin: 10px;
 }
 
-.founder a {
-  color: #000;
-  .founder a {
-    color: #000;
-    text-decoration: underline;
-  }
+.founder-name {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
 }
+
+.languages-known,
+.languages-wishlist {
+  font-size: 14px;
+  font-style: normal;
+  height: 20px;
+  text-align: left;
+  align-self: flex-start;
+}
+
+.languages-known span,
+.languages-wishlist span {
+  font-weight: 400;
+}
+
+.linkedin-icon {
+  fill: #0077b5;
+  fill: black;
+  width: 44px;
+  height: 44px;
+}
+
+/* _  _  _  _  _                                        
+   (_)(_)(_)(_)(_)                                       
+   (_)          _  _  _    _       _  _  _  _   _  _     
+   (_) _  _  _ (_)(_)(_) _(_)_  _ (_)(_)(_)(_)_(_)(_)    
+   (_)(_)(_)(_)         (_) (_)(_)     (_)   (_)   (_)   
+   (_)      (_)         (_) (_)        (_)   (_)   (_)   
+   (_)      (_) _  _  _ (_) (_)        (_)   (_)   (_)   
+   (_)         (_)(_)(_)    (_)        (_)   (_)   (_)   
+                                                         
+                                                          */
 
 button.nav {
   border: none;
@@ -229,23 +283,18 @@ button.nav {
 }
 
 button.active {
-  /* color: white; */
-  /* background: rgba(23, 178, 196, 0.8); */
-  /* background: #00b7ff; */
   box-shadow: 5px 5px 15px rgb(0, 81, 255), -5px -5px 15px rgba(43, 6, 255, 0.5);
 }
 
 #contactForm {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  padding-top: 40px;
+  width: 60%;
 }
 
 #subscriptionForm {
   display: flex;
   flex-direction: column;
-  padding-top: 40px;
 }
 
 #subscriptionForm input {
@@ -310,5 +359,14 @@ button.active {
   #contentImage4 {
     right: 0%;
     top: 60vh;
+  }
+
+  .founders {
+    flex-direction: column;
+  }
+
+  .founder {
+    width: 100%;
+    max-width: none;
   }
 }
