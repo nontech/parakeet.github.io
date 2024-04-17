@@ -74,6 +74,7 @@ export function handleVoice(command) {
       break;
 
     case "waiting list":
+      contentTitle.textContent = "Get Early Access";
       contentBody.innerHTML = `
         <div>
           <div>Parakeet creates personalized learning experiences that adapt to your pace and style using advanced AI.</div>
@@ -123,8 +124,8 @@ export function handleVoice(command) {
       break;
 
     case "contact":
+      contentTitle.textContent = "Connect With Us";
       contentBody.innerHTML = `
-        <div>Connect With Us</div>
 
         <div>Have questions, suggestions or want to know more?</div>
         
@@ -175,6 +176,7 @@ export function handleVoice(command) {
       break;
 
     case "who we are":
+      contentTitle.textContent = "Our Story";
       contentBody.innerHTML = `
         <div>Our mission is to recreate the natural way of learning languages through advanced AI.</div>
 
