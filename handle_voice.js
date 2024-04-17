@@ -53,7 +53,7 @@ export function handleVoice(command) {
         <p>Learn languages like you learned your first.</p>
         <p><span class="bold">No screens, no grammar drills, no rote memorization,</span> and <span class="bold">no endless repetition without context</span>.</p>
         <p>Immerse yourself in practical, everyday conversations, just like a native speaker would.</p>
-        <p>parakeet uses GenAI to create real-life conversations so you learn to speak by actually speaking.</p>
+        <p><span class="logo">parakeet</span> uses GenAI to create real-life conversations so you learn to speak by actually speaking.</p>
       </div>
       `;
       homeButton.classList.add("active");
@@ -72,12 +72,11 @@ export function handleVoice(command) {
       contentTitle.textContent = "Get Early Access";
       contentBody.innerHTML = `
         <div class="content-container">
-          <p>Parakeet creates personalized learning experiences that adapt to your pace and style using GenAI.</p>
+          <p><span class="logo">parakeet</span> creates personalized learning experiences that adapt to your pace and style using GenAI.</p>
 
           <p>Subscribers gain early access to our beta, special launch promotions, and insights into our approach.</p>
 
-          <p>Join our waiting list.</p>
-
+          <br>
           <p>Ready to change how you learn languages? Join our waiting list.</p>
         </div>
         <div>
@@ -179,18 +178,18 @@ export function handleVoice(command) {
       contentTitle.textContent = "Our Story";
       contentBody.innerHTML = `
       <div class="content-container">
-        <p>Our mission is to recreate the natural way of learning languages through advanced AI.</p>
+        <p>Our mission is to recreate the natural way of learning languages through generative AI.</p>
 
         <p>We believe in empowering people to speak any language confidently.</p>
 
-        <p>Founded on the principles of cognitive science and generative AI, parakeet is designed to make you fluent by leveraging the natural methods that helped you learn your mother tongue.</p>
+        <p>Founded on the principles of cognitive science and generative AI, <span class="logo">parakeet</span> is designed to make you fluent by leveraging the natural methods that helped you learn your mother tongue.</p>
 
         <div class="founders">
           <div class="founder">
             <img src="img/founders/alejh.png" alt="Founder 1" class="founder-image">
             <div class="founder-name">Alejandro</div>
-            <div class="languages-known">Knows: Spanish, English, some German</div>
-            <div class="languages-wishlist">Wants to learn: German (C1), Tamil, Bengali</div>
+            <div class="languages-known"><span>Knows:</span> Spanish, English, some German</div>
+            <div class="languages-wishlist"><span>Wants to learn:</span> German (C1), Tamil, Bengali</div>
             <a href = "https://www.linkedin.com/in/alejandrocamus/" target = "_blank"> 
               <svg class="linkedin-icon" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 30 30" width="30px" height="30px">    <path d="M24,4H6C4.895,4,4,4.895,4,6v18c0,1.105,0.895,2,2,2h18c1.105,0,2-0.895,2-2V6C26,4.895,25.105,4,24,4z M10.954,22h-2.95 v-9.492h2.95V22z M9.449,11.151c-0.951,0-1.72-0.771-1.72-1.72c0-0.949,0.77-1.719,1.72-1.719c0.948,0,1.719,0.771,1.719,1.719 C11.168,10.38,10.397,11.151,9.449,11.151z M22.004,22h-2.948v-4.616c0-1.101-0.02-2.517-1.533-2.517 c-1.535,0-1.771,1.199-1.771,2.437V22h-2.948v-9.492h2.83v1.297h0.04c0.394-0.746,1.356-1.533,2.791-1.533 c2.987,0,3.539,1.966,3.539,4.522V22z"/></svg>
             </a>
@@ -198,8 +197,8 @@ export function handleVoice(command) {
           <div class="founder">
             <img src="img/founders/mukesh.jpeg" alt="Founder 2" class="founder-image">
             <div class="founder-name">Mukesh</div>
-            <div class="languages-known">Knows: Nepali, Hindi, Bhojpuri, English</div>
-            <div class="languages-wishlist">Wants to learn: German, Russian, Spanish</div>
+            <div class="languages-known"><span>Knows:</span> Nepali, Hindi, Bhojpuri, English</div>
+            <div class="languages-wishlist"><span>Wants to learn:</span> German, Russian, Spanish</div>
             <a href = "https://www.linkedin.com/in/mukesh-jaiswal-23b5b0a9/" target = "_blank">
               <svg class="linkedin-icon" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 30 30" width="30px" height="30px">    <path d="M24,4H6C4.895,4,4,4.895,4,6v18c0,1.105,0.895,2,2,2h18c1.105,0,2-0.895,2-2V6C26,4.895,25.105,4,24,4z M10.954,22h-2.95 v-9.492h2.95V22z M9.449,11.151c-0.951,0-1.72-0.771-1.72-1.72c0-0.949,0.77-1.719,1.72-1.719c0.948,0,1.719,0.771,1.719,1.719 C11.168,10.38,10.397,11.151,9.449,11.151z M22.004,22h-2.948v-4.616c0-1.101-0.02-2.517-1.533-2.517 c-1.535,0-1.771,1.199-1.771,2.437V22h-2.948v-9.492h2.83v1.297h0.04c0.394-0.746,1.356-1.533,2.791-1.533 c2.987,0,3.539,1.966,3.539,4.522V22z"/></svg>
             </a>
@@ -207,8 +206,8 @@ export function handleVoice(command) {
           <div class="founder">
             <img src="img/founders/burcu.jpeg" alt="Founder 3" class="founder-image">
             <div class="founder-name">Burcu</div>
-            <div class="languages-known">Knows: Turkish, English</div>
-            <div class="languages-wishlist">Wants to learn: German, Spanish</div>
+            <div class="languages-known"><span>Knows:</span> Turkish, English</div>
+            <div class="languages-wishlist"><span>Wants to learn:</span> German, Spanish</div>
             <a href = "https://www.linkedin.com/in/burcu-baycan-900926176/" target = "_blank">
               <svg class="linkedin-icon" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 30 30" width="30px" height="30px">    <path d="M24,4H6C4.895,4,4,4.895,4,6v18c0,1.105,0.895,2,2,2h18c1.105,0,2-0.895,2-2V6C26,4.895,25.105,4,24,4z M10.954,22h-2.95 v-9.492h2.95V22z M9.449,11.151c-0.951,0-1.72-0.771-1.72-1.72c0-0.949,0.77-1.719,1.72-1.719c0.948,0,1.719,0.771,1.719,1.719 C11.168,10.38,10.397,11.151,9.449,11.151z M22.004,22h-2.948v-4.616c0-1.101-0.02-2.517-1.533-2.517 c-1.535,0-1.771,1.199-1.771,2.437V22h-2.948v-9.492h2.83v1.297h0.04c0.394-0.746,1.356-1.533,2.791-1.533 c2.987,0,3.539,1.966,3.539,4.522V22z"/></svg>
             </a>
@@ -216,8 +215,8 @@ export function handleVoice(command) {
           <div class="founder">
             <img src="img/founders/aman.png" alt="Founder 4" class="founder-image">
             <div class="founder-name">Aman</div>
-            <div class="languages-known">Knows: Nepali, Hindi, Bhojpuri, English</div>
-            <div class="languages-wishlist">Wants to learn: German, Spanish</div>
+            <div class="languages-known"><span>Knows:</span> Nepali, Hindi, Bhojpuri, English</div>
+            <div class="languages-wishlist"><span>Wants to learn:</span> German, Spanish</div>
             <a href = "https://www.linkedin.com/in/aman-jaiswal-5b3354178/" target = "_blank">
               <svg class="linkedin-icon" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 30 30" width="30px" height="30px">    <path d="M24,4H6C4.895,4,4,4.895,4,6v18c0,1.105,0.895,2,2,2h18c1.105,0,2-0.895,2-2V6C26,4.895,25.105,4,24,4z M10.954,22h-2.95 v-9.492h2.95V22z M9.449,11.151c-0.951,0-1.72-0.771-1.72-1.72c0-0.949,0.77-1.719,1.72-1.719c0.948,0,1.719,0.771,1.719,1.719 C11.168,10.38,10.397,11.151,9.449,11.151z M22.004,22h-2.948v-4.616c0-1.101-0.02-2.517-1.533-2.517 c-1.535,0-1.771,1.199-1.771,2.437V22h-2.948v-9.492h2.83v1.297h0.04c0.394-0.746,1.356-1.533,2.791-1.533 c2.987,0,3.539,1.966,3.539,4.522V22z"/></svg>
             </a>
@@ -240,7 +239,7 @@ export function handleVoice(command) {
       console.log("Command not recognized");
       if (first_command) {
         contentBody.innerHTML = `
-            At parakeet, we revolutionize language learning by mimicking the natural learning process.
+            At <span class="logo">parakeet</span>, we revolutionize language learning by mimicking the natural learning process.
             <ul>
                 <li>Learn in the same way you became a native speaker of your mother tongue.</li>
                 <li>Experience the power of learning a language organically through engaging, AI-generated scenarios tailored to your interests and needs.</li>

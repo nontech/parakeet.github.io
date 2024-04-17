@@ -18,6 +18,7 @@ html {
   display: flex;
   flex-direction: row;
   height: 100%;
+  padding: 0px 0px 0px 50px;
 }
 
 .modal-overlay {
@@ -80,13 +81,15 @@ html {
   text-align: center;
 }
 
-#logo {
+.logo {
   font-family: "Montserrat", sans-serif;
   font-family: "Raleway", sans-serif;
-  font-weight: 800;
   font-style: italic;
+  font-weight: 800;
+}
+
+#logo {
   font-size: 4em;
-  color: "black";
   background: linear-gradient(to right, #00ff7f, #87ceeb);
   z-index: 1100;
   margin: 60px;
@@ -138,13 +141,13 @@ html {
 }
 
 .content-container-home {
-  max-width: 800px;
   text-align: center;
-  /* padding: 20px; */
 }
+
 p {
   margin: 15px 0;
 }
+
 .bold {
   font-weight: bold;
 }
@@ -177,7 +180,7 @@ p {
 
 #contentImage1 {
   left: 30%;
-  top: 0%;
+  bottom: 0%;
 }
 
 #contentImage2 {
@@ -245,8 +248,14 @@ p {
   align-self: flex-start;
 }
 
+.languages-known span,
+.languages-wishlist span {
+  font-weight: 400;
+}
+
 .linkedin-icon {
-  fill: #0077b5; /* LinkedIn color */
+  fill: #0077b5;
+  fill: black;
   width: 44px;
   height: 44px;
 }
@@ -280,7 +289,7 @@ button.active {
 #contactForm {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 60%;
 }
 
 #subscriptionForm {
