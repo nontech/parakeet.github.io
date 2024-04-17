@@ -73,17 +73,17 @@ export function handleVoice(command) {
       contentBody.innerHTML = `
       Ready to change how you learn languages? Join our waiting list
         <br>
-        <form id = "subscriptionForm" action="https://docs.google.com/forms/u/5/d/e/1FAIpQLSdDx3ou_lS9Q7VIXvBfXF1qEmU4SUlPpdKVWaksdy3_QTmn7g/formResponse">
+        <form id="subscriptionForm" action="https://docs.google.com/forms/u/5/d/e/1FAIpQLSdDx3ou_lS9Q7VIXvBfXF1qEmU4SUlPpdKVWaksdy3_QTmn7g/formResponse">
           <label for="email">Your email:</label><br>
-          <input type="email" id="emailSubscription" name="emailAddress" required><br>
-          <input type="submit" value="Subscribe">
+          <input class="form-element" type="email" id="emailSubscription" name="emailAddress" required><br>
+          <input class="form-element" type="submit" value="Subscribe">
         </form>
       `;
       document.getElementById("subscriptionForm").addEventListener("submit", function (e) {
         e.preventDefault(); // Stop the form from submitting the traditional way
-      
+
         var formData = new FormData(this);
-      
+
         fetch(this.action, {
           method: "POST",
           body: formData,
@@ -97,7 +97,6 @@ export function handleVoice(command) {
           })
           .catch((error) => console.error("Error:", error));
       });
-
 
       homeButton.classList.remove("active");
       waitingListButton.classList.add("active");
@@ -117,7 +116,7 @@ export function handleVoice(command) {
         <br>
         <form id = "contactForm" action="https://docs.google.com/forms/u/5/d/182IvO9Cf05t-krEHsBKH9eBuM7D5ZX9b_qsNi4NhC1M/formResponse">
           <label for="email">Your email:</label><br>
-          <input type="email" id="email" name="emailAddress" required><br>
+          <input class="form-element" type="email" id="email" name="emailAddress" required><br>
           <label for="message">Message:</label><br>
           <textarea class="form-element" id="message" name="entry.785871569" required></textarea><br>
           <input class="form-element" type="submit" value="Send message">
@@ -125,9 +124,9 @@ export function handleVoice(command) {
       `;
       document.getElementById("contactForm").addEventListener("submit", function (e) {
         e.preventDefault(); // Stop the form from submitting the traditional way
-      
+
         var formData = new FormData(this);
-      
+
         fetch(this.action, {
           method: "POST",
           body: formData,
@@ -142,7 +141,7 @@ export function handleVoice(command) {
           })
           .catch((error) => console.error("Error:", error));
       });
-      
+
       homeButton.classList.remove("active");
       waitingListButton.classList.remove("active");
       contactButton.classList.add("active");
