@@ -47,8 +47,8 @@ export function handleVoice(command) {
 
   switch (command) {
     case "home":
-      contentBody.innerHTML = 
-      `
+      contentTitle.textContent = "Unlock the Natural Way of Language Learning";
+      contentBody.innerHTML = `
         <div>
           <div>No screens, No grammar drills, No rote memorization & No endless repetition without context</div>
 
@@ -72,10 +72,9 @@ export function handleVoice(command) {
       contentImage4.classList.add("hidden");
       contentImage.style.display = "none";
       break;
-    
+
     case "waiting list":
-      contentBody.innerHTML = 
-      `
+      contentBody.innerHTML = `
         <div>
           <div>Parakeet creates personalized learning experiences that adapt to your pace and style using advanced AI.</div>
 
@@ -91,12 +90,12 @@ export function handleVoice(command) {
           </form>
         </div>
       `;
-      
+
       document.getElementById("subscriptionForm").addEventListener("submit", function (e) {
         e.preventDefault(); // Stop the form from submitting the traditional way
-      
+
         var formData = new FormData(this);
-      
+
         fetch(this.action, {
           method: "POST",
           body: formData,
@@ -111,7 +110,6 @@ export function handleVoice(command) {
           .catch((error) => console.error("Error:", error));
       });
 
-
       homeButton.classList.remove("active");
       waitingListButton.classList.add("active");
       contactButton.classList.remove("active");
@@ -123,10 +121,9 @@ export function handleVoice(command) {
       contentImage4.classList.add("hidden");
       contentImage.style.display = "none";
       break;
-    
+
     case "contact":
-      contentBody.innerHTML = 
-      `
+      contentBody.innerHTML = `
         <div>Connect With Us</div>
 
         <div>Have questions, suggestions or want to know more?</div>
@@ -144,12 +141,12 @@ export function handleVoice(command) {
           <input class="form-element" type="submit" value="Send message">
         </form>
       `;
-      
+
       document.getElementById("contactForm").addEventListener("submit", function (e) {
         e.preventDefault(); // Stop the form from submitting the traditional way
-      
+
         var formData = new FormData(this);
-      
+
         fetch(this.action, {
           method: "POST",
           body: formData,
@@ -164,7 +161,7 @@ export function handleVoice(command) {
           })
           .catch((error) => console.error("Error:", error));
       });
-      
+
       homeButton.classList.remove("active");
       waitingListButton.classList.remove("active");
       contactButton.classList.add("active");
@@ -176,10 +173,9 @@ export function handleVoice(command) {
       contentImage4.classList.add("hidden");
       contentImage.style.display = "none";
       break;
-    
+
     case "who we are":
-      contentBody.innerHTML = 
-      `
+      contentBody.innerHTML = `
         <div>Our mission is to recreate the natural way of learning languages through advanced AI.</div>
 
         <div>We believe in empowering people to speak any language confidently.</div>
