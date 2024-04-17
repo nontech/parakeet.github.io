@@ -49,17 +49,12 @@ export function handleVoice(command) {
     case "home":
       contentTitle.textContent = "Unlock the Natural Way of Language Learning";
       contentBody.innerHTML = `
-        <div>
-          <div>No screens, No grammar drills, No rote memorization & No endless repetition without context</div>
-
-          <div>
-            Learn Languages Like You Learned Your First
-          </div>
-      
-          <div>Immerse yourself in practical, everyday conversations, just like a native speaker would.</div>
-      
-          <div>Parakeet uses advanced AI to simulate real-life conversations, so you learn to speak by actually speaking.</div>
-        </div>
+      <div class="content-container">
+        <p>Learn languages like you learned your first.</p>
+        <p><span class="bold">No screens, no grammar drills, no rote memorization,</span> and <span class="bold">no endless repetition without context</span>.</p>
+        <p>Immerse yourself in practical, everyday conversations, just like a native speaker would.</p>
+        <p>Parakeet uses advanced AI to simulate real-life conversations, so you learn to speak by actually speaking.</p>
+      </div>
       `;
       homeButton.classList.add("active");
       waitingListButton.classList.remove("active");
@@ -76,15 +71,16 @@ export function handleVoice(command) {
     case "waiting list":
       contentTitle.textContent = "Get Early Access";
       contentBody.innerHTML = `
+        <div class="content-container">
+          <p>Parakeet creates personalized learning experiences that adapt to your pace and style using advanced AI.</p>
+
+          <p>Subscribers gain early access to our beta, special launch promotions, and insights into our AI-driven approach.</p>
+
+          <p>Join Our Exclusive Waiting List</p>
+
+          <p>Ready to change how you learn languages? Join our waiting list</p>
+        </div>
         <div>
-          <div>Parakeet creates personalized learning experiences that adapt to your pace and style using advanced AI.</div>
-
-          <div>Subscribers gain early access to our beta, special launch promotions, and insights into our AI-driven approach.</div>
-
-          <div>Join Our Exclusive Waiting List</div>
-
-          <div>Ready to change how you learn languages? Join our waiting list</div>
-
           <br>
           <form id="subscriptionForm" action="https://docs.google.com/forms/u/5/d/e/1FAIpQLSdDx3ou_lS9Q7VIXvBfXF1qEmU4SUlPpdKVWaksdy3_QTmn7g/formResponse">
           <label for="email">Your email:</label><br>
@@ -128,14 +124,15 @@ export function handleVoice(command) {
     case "contact":
       contentTitle.textContent = "Connect With Us";
       contentBody.innerHTML = `
-
-        <div>Have questions, suggestions or want to know more?</div>
+      <div class="content-container">
+        <p>Have questions, suggestions or want to know more?</p>
         
-        <div>Or just want to chat about your language journey, we’re all ears.</div>
+        <p>Or just want to chat about your language journey, we’re all ears.</p>
 
-        <div>Drop us a message anytime.</div>
-
-        <br>
+        <p>Drop us a message anytime.</p>
+      </div>
+      <br>
+      <div>
         <form id = "contactForm" action="https://docs.google.com/forms/u/5/d/182IvO9Cf05t-krEHsBKH9eBuM7D5ZX9b_qsNi4NhC1M/formResponse">
           <label for="email">Your email:</label><br>
           <input class="form-element" type="email" id="email" name="emailAddress" required><br>
@@ -143,6 +140,7 @@ export function handleVoice(command) {
           <textarea class="form-element" id="message" name="entry.785871569" required></textarea><br>
           <input class="form-element" type="submit" value="Send message">
         </form>
+      </div>
       `;
 
       document.getElementById("contactForm").addEventListener("submit", function (e) {
@@ -180,11 +178,12 @@ export function handleVoice(command) {
     case "who we are":
       contentTitle.textContent = "Our Story";
       contentBody.innerHTML = `
-        <div>Our mission is to recreate the natural way of learning languages through advanced AI.</div>
+      <div class="content-container">
+        <p>Our mission is to recreate the natural way of learning languages through advanced AI.</p>
 
-        <div>We believe in empowering people to speak any language confidently.</div>
+        <p>We believe in empowering people to speak any language confidently.</p>
 
-        <div>Founded on the principles of cognitive science and AI, Parakeet is designed to make you fluent by leveraging the natural methods that helped you learn your mother tongue.</div>
+        <p>Founded on the principles of cognitive science and generative AI, Parakeet is designed to make you fluent by leveraging the natural methods that helped you learn your mother tongue.</p>
 
         <div class="founders">
           <div class="founder">

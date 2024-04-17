@@ -110,12 +110,9 @@ html {
   height: 80%;
   display: block;
   z-index: 900;
-  /* Center vertically and horizontally */
 }
 
 .right .content {
-  /* background: #e0e0e0; */
-  /* box-shadow: 10px 10px 20px #3a3a3a7a, -10px -10px 20px #08080858; */
   border-radius: 20px;
   padding: 20px;
   width: 80%;
@@ -141,6 +138,19 @@ html {
   font-size: 1.5em;
   font-style: italic;
   font-weight: 300;
+}
+
+.content-container {
+  max-width: 800px;
+  text-align: center;
+  /* margin: auto; */
+  /* padding: 20px; */
+}
+p {
+  margin: 15px 0;
+}
+.bold {
+  font-weight: bold;
 }
 
 /*                                                                                                                                
@@ -189,6 +199,18 @@ html {
   bottom: 0%;
 }
 
+/*                                                                                                                                  
+                                               ,,                        ,,                                                      
+`7MM"""YMM                                   `7MM                        db                                                      
+  MM    `7                                     MM                                                                                
+  MM   d  ,pW"Wq.`7MM  `7MM  `7MMpMMMb.   ,M""bMM  .gP"Ya `7Mb,od8     `7MM  `7MMpMMMb.pMMMb.   ,6"Yb.  .P"Ybmmm .gP"Ya  ,pP"Ybd 
+  MM""MM 6W'   `Wb MM    MM    MM    MM ,AP    MM ,M'   Yb  MM' "'       MM    MM    MM    MM  8)   MM :MI  I8  ,M'   Yb 8I   `" 
+  MM   Y 8M     M8 MM    MM    MM    MM 8MI    MM 8M""""""  MM           MM    MM    MM    MM   ,pm9MM  WmmmP"  8M"""""" `YMMMa. 
+  MM     YA.   ,A9 MM    MM    MM    MM `Mb    MM YM.    ,  MM           MM    MM    MM    MM  8M   MM 8M       YM.    , L.   I8 
+.JMML.    `Ybmd9'  `Mbod"YML..JMML  JMML.`Wbmd"MML.`Mbmmd'.JMML.       .JMML..JMML  JMML  JMML.`Moo9^Yo.YMMMMMb  `Mbmmd' M9mmmP' 
+                                                                                                       6'     dP                 
+                                                                                                       Ybmmmd'                    */
+
 .founders {
   display: flex;
   justify-content: space-around;
@@ -217,6 +239,17 @@ html {
   }
 }
 
+/* _  _  _  _  _                                        
+   (_)(_)(_)(_)(_)                                       
+   (_)          _  _  _    _       _  _  _  _   _  _     
+   (_) _  _  _ (_)(_)(_) _(_)_  _ (_)(_)(_)(_)_(_)(_)    
+   (_)(_)(_)(_)         (_) (_)(_)     (_)   (_)   (_)   
+   (_)      (_)         (_) (_)        (_)   (_)   (_)   
+   (_)      (_) _  _  _ (_) (_)        (_)   (_)   (_)   
+   (_)         (_)(_)(_)    (_)        (_)   (_)   (_)   
+                                                         
+                                                          */
+
 button.nav {
   border: none;
   border-radius: 5px;
@@ -229,9 +262,6 @@ button.nav {
 }
 
 button.active {
-  /* color: white; */
-  /* background: rgba(23, 178, 196, 0.8); */
-  /* background: #00b7ff; */
   box-shadow: 5px 5px 15px rgb(0, 81, 255), -5px -5px 15px rgba(43, 6, 255, 0.5);
 }
 
