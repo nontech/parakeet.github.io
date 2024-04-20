@@ -238,15 +238,25 @@ export function handleVoice(command) {
     default:
       console.log("Command not recognized");
       if (first_command) {
+        contentTitle.textContent = "Unlock the Natural Way of Language Learning";
         contentBody.innerHTML = `
-            At <span class="logo">parakeet</span>, we revolutionize language learning by mimicking the natural learning process.
-            <ul>
-                <li>Learn in the same way you became a native speaker of your mother tongue.</li>
-                <li>Experience the power of learning a language organically through engaging, AI-generated scenarios tailored to your interests and needs.</li>
-                <li>Forget about screens, tedious grammar drills, and endless repetition without context.</li>
-                <li>Immerse yourself in practical, everyday conversations, just like a native speaker would.</li>
-            </ul>
-        `;
+      <div class="content-container-home">
+        <p>Learn languages like you learned your first.</p>
+        <p><span class="bold">No screens, no grammar drills, no rote memorization,</span> and <span class="bold">no endless repetition without context</span>.</p>
+        <p>Immerse yourself in practical, everyday conversations, just like a native speaker would.</p>
+        <p><span class="logo">parakeet</span> uses GenAI to create real-life conversations so you learn to speak by actually speaking.</p>
+      </div>
+      `;
+        homeButton.classList.add("active");
+        waitingListButton.classList.remove("active");
+        contactButton.classList.remove("active");
+        whoWeAreButton.classList.remove("active");
+
+        contentImage1.classList.remove("hidden");
+        contentImage2.classList.add("hidden");
+        contentImage3.classList.add("hidden");
+        contentImage4.classList.add("hidden");
+        contentImage.style.display = "none";
         contentImage1.classList.remove("hidden");
         contentImage2.classList.add("hidden");
         contentImage3.classList.add("hidden");
