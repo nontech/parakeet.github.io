@@ -341,25 +341,18 @@ button.active {
     top: 90%;
   }
 
-  #contentImage1 {
-    right: 0%;
-    top: 60vh;
-    translate: -20% 0%;
+  #contentMain {
+    margin-top: 0vh;
   }
 
-  #contentImage2 {
-    right: 0%;
-    top: 60vh;
-  }
-
-  #contentImage3 {
-    right: 0%;
-    top: 60vh;
-  }
-
+  #contentImage1,
+  #contentImage2,
+  #contentImage3,
   #contentImage4 {
-    right: 0%;
-    top: 60vh;
+    height: 20%;
+    left: 50%;
+    top: 70vh;
+    transform: translate(-50%, -50%);
   }
 
   .founders {
@@ -369,5 +362,6 @@ button.active {
   .founder {
     width: 100%;
     max-width: none;
+    margin: 10px 0;
   }
 }
