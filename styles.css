@@ -365,3 +365,52 @@ button.active {
     margin: 10px 0;
   }
 }
+
+/* Assuming you have the CSS rules you provided in a file named styles.css */
+.typing-field label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.typing-field input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 20px;
+  background-color: #0d0c36;
+  border: 2px solid #4f4cf2;
+  color: white;
+  font-size: 16px;
+}
+
+.arrow {
+  display: block;
+  width: 50px;
+  margin: 20px auto;
+}
+
+.audio-player {
+  text-align: center;
+  margin-top: 20px;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.typing-animation {
+  animation: typing 2s steps(40, end) infinite;
+}
+
+.logo {
+  width: 100px;
+}
+
+nav a {
+  padding: 10px;
+  margin-right: 10px;
+}

@@ -4,50 +4,362 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Parakeet</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+      header {
+        background-color: #ffffff;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+      }
+      header img {
+        height: 60px;
+        margin-right: 20px;
+      }
+      header nav {
+        flex-grow: 1;
+        text-align: left;
+      }
+      header nav a {
+        color: #0d0c36;
+        text-decoration: none;
+        margin: 0 15px;
+      }
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
+      section {
+        padding: 40px 20px;
+        text-align: center;
+      }
+      .section-dark {
+        background-color: #0d0c36;
+        color: white;
+      }
+      .section-light {
+        background-color: #ffffff;
+        color: #0d0c36;
+      }
+      .typing-container {
+        font-size: 20px;
+        margin: 20px 0;
+        text-align: left;
+        display: inline-block;
+        width: 100%;
+        max-width: 600px;
+      }
+      .typing-label {
+        display: inline-block;
+        width: 80px;
+        vertical-align: middle;
+        margin-right: 10px;
+      }
+      .typing-field {
+        border: 1px solid #4f4cf2;
+        border-radius: 8px;
+        padding: 0px;
+        box-sizing: border-box;
+        display: inline-block;
+        width: calc(100% - 100px);
+        height: 1.5em;
+        overflow: hidden;
+        vertical-align: middle;
+        line-height: 1.5em; /* Adjust line-height to align text vertically */
+      }
+      .typing-animation {
+        white-space: nowrap;
+        overflow: hidden;
+        display: inline-block;
+        vertical-align: middle;
+        width: 100%;
+        box-sizing: border-box;
+        animation: typing 5s steps(30, end), blink 0.75s step-end infinite;
+        padding: 0; /* Ensure no padding */
+        margin: 0; /* Ensure no margin */
+      }
 
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="content_styles.css" />
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+      @keyframes blink {
+        from,
+        to {
+          border-color: transparent;
+        }
+        50% {
+          border-color: #4f4cf2;
+        }
+      }
+      .arrow {
+        font-size: 30px;
+        margin: 20px 0;
+      }
+      .email-list {
+        margin-top: 40px;
+      }
+      .full-width-logo {
+        width: 100%;
+      }
+      .button {
+        background-color: #4f4cf2;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 8px;
+      }
+      .form-element {
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid #0d0c36;
+        margin-right: 10px;
+        width: calc(100% - 140px);
+      }
+      .content-container {
+        max-width: 800px;
+        margin: 0 auto;
+        font-family: "Helvetica", sans-serif;
+      }
+      h1 {
+        font-size: 2.5em;
+        font-weight: bold;
+      }
+      h2 {
+        font-size: 2em;
+        font-weight: bold;
+      }
+      /* p { */
+        /* font-size: 1.2em;
+        line-height: 1.8; */
+      /* } */
+      .combined-sections {
+        display: flex;
+        gap: 80px;
+        padding: 0px 200px 0px 200px;
+      }
+      .combined-section {
+        margin: 0px 20px 0px 20px;
+        flex: 1;
+        text-align: left; /* Align text to left for better readability */
+      }
+      .founders {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+        flex-wrap: wrap;
+      }
+
+      .founder {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px;
+        height: 350px;
+        max-width: 200px;
+        justify-content: space-between;
+      }
+
+      .founder img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+      }
+
+      .founder-name {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+      }
+
+      .languages-known,
+      .languages-wishlist {
+        font-size: 14px;
+        font-style: normal;
+        height: 20px;
+        text-align: left;
+        align-self: flex-start;
+      }
+
+      .languages-known span,
+      .languages-wishlist span {
+        font-weight: 400;
+      }
+
+      .linkedin-icon {
+        fill: #0077b5;
+        fill: #4F4CF2;
+        width: 44px;
+        height: 44px;
+      }
+    </style>
   </head>
   <body>
-    <div id="voiceModal" class="modal-overlay">
-      <div class="modal-content">
-        <h2>To navigate this website you will be using your own voice</h2>
-        <button id="startToBeginButton" onclick="closeModal()">Click Start to Begin</button>
-      </div>
-    </div>
-    <img src="img/parakeet_0.png" class="parakeet-img" id="contentImage" alt="Initial Image" />
-    <div class="container">
-      <div class="left">
-        <h1 id="logo" class="logo">parakeet</h1>
-        <p class="instructions">Say out loud one of the following words or click on it to navigate:</p>
-        <ul class="command-list">
-          <button class="nav" id="homeButton">Go home</button></script>
-          <button class = "nav" id = "waitingListButton">Waiting list</button>
-          <button class = "nav" id = "contactButton">Contact</button>
-          <button class = "nav" id = "whoWeAreButton">Who we are</button>
-        </ul>
-        <div class="audio-visualization" id="visualization-box">
-          <canvas id="audioCanvas"></canvas>
+    <header>
+      <img src="img/square-logo.png" alt="Parakeet Logo" />
+      <nav>
+        <a href="#features">Features</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section id="features" class="section-dark">
+      <h1>Parakeet</h1>
+      <div class="typing-container">
+        <div>
+          <span class="typing-label">Topic:</span>
+          <span class="typing-field"><span class="typing-animation" id="typing-topic"></span></span>
+        </div>
+        <div>
+          <span class="typing-label">Keywords:</span>
+          <span class="typing-field"><span class="typing-animation" id="typing-keywords"></span></span>
         </div>
       </div>
-      <div class="right">
-        <img src="img/parakeet_1.png" class="parakeet-img hidden" id="contentImage1" alt="Initial Image" />
-        <img src="img/parakeet_2.png" class="parakeet-img hidden" id="contentImage2" alt="Initial Image" />
-        <img src="img/parakeet_3.png" class="parakeet-img hidden" id="contentImage3" alt="Initial Image" />
-        <img src="img/parakeet_4.png" class="parakeet-img hidden" id="contentImage4" alt="Initial Image" />
-        <div id="contentMain" style="display: none">
-          <h1 id="contentTitle"></h1>
-          <p id="contentBody"></p>
-        </div>
+      <div class="arrow">↓</div>
+      <audio controls>
+        <source src="assets/lesson-sample.mp3" type="audio/mp3" />
+        Your browser does not support the audio element.
+      </audio>
+    </section>
+
+    <img src="img/rectangular-logo.png" alt="Parakeet Logo" class="full-width-logo" />
+
+    <section id="about" class="section-light email-list">
+      <div class="content-container">
+        <h2>Join Our Waiting List</h2>
+        <p>We want to connect with you. We are just getting started and we want to hear from you what you want, we'll build it for you.</p>
+        <p>Ready to change how you learn languages together with us?</p>
+        <form
+          id="subscriptionForm"
+          action="https://docs.google.com/forms/u/5/d/e/1FAIpQLSdDx3ou_lS9Q7VIXvBfXF1qEmU4SUlPpdKVWaksdy3_QTmn7g/formResponse"
+        >
+          <input class="form-element" type="email" id="emailSubscription" name="emailAddress" placeholder="Enter your email" required />
+          <input class="button" type="submit" value="Subscribe" />
+        </form>
       </div>
-    </div>
-    <script type="module" src="script.js"></script>
+    </section>
+
+    <section id="combined" class="section-dark combined-sections">
+      <div class="combined-section">
+        <h2>Features</h2>
+        <p>Parakeet creates personalized learning experiences that adapt to your pace and style using GenAI.</p>
+        <p>Learn languages like you learned your first.</p>
+        <p>No screens, no grammar drills, no rote memorization, and no endless repetition without context.</p>
+      </div>
+      <div class="combined-section">
+        <h2>Benefits</h2>
+        <p>Immerse yourself in practical, everyday conversations, just like a native speaker would.</p>
+        <p>Parakeet uses GenAI to create real-life conversations so you learn to speak by actually speaking.</p>
+      </div>
+      <div class="combined-section">
+        <h2>Our Mission</h2>
+        <p>
+          Our mission is to recreate the natural way of learning languages through generative AI. We believe in empowering people to speak any
+          language confidently.
+        </p>
+        <p>
+          Founded on the principles of cognitive science and generative AI, Parakeet is designed to make you fluent by leveraging the natural methods
+          that helped you learn your mother tongue.
+        </p>
+      </div>
+    </section>
+
+    <section id="about" class="section-light">
+      <div class="content-container">
+        <p>Our mission is to recreate the natural way of learning languages through generative AI.</p>
+
+        <p>We believe in empowering people to speak any language confidently.</p>
+
+        <p>Founded on the principles of cognitive science and generative AI, <span class="logo">parakeet</span> is designed to make you fluent by leveraging the natural methods that helped you learn your mother tongue.</p>
+
+        <div class="founders">
+          <div class="founder">
+            <img src="img/founders/alejh.png" alt="Founder 1" class="founder-image">
+            <div class="founder-name">Alejandro</div>
+            <div class="languages-known"><span>Knows:</span> Spanish, English, some German</div>
+            <div class="languages-wishlist"><span>Wants to learn:</span> German (C1), Tamil, Bengali</div>
+            <a href = "https://www.linkedin.com/in/alejandrocamus/" target = "_blank"> 
+              <svg class="linkedin-icon" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 30 30" width="30px" height="30px">    <path d="M24,4H6C4.895,4,4,4.895,4,6v18c0,1.105,0.895,2,2,2h18c1.105,0,2-0.895,2-2V6C26,4.895,25.105,4,24,4z M10.954,22h-2.95 v-9.492h2.95V22z M9.449,11.151c-0.951,0-1.72-0.771-1.72-1.72c0-0.949,0.77-1.719,1.72-1.719c0.948,0,1.719,0.771,1.719,1.719 C11.168,10.38,10.397,11.151,9.449,11.151z M22.004,22h-2.948v-4.616c0-1.101-0.02-2.517-1.533-2.517 c-1.535,0-1.771,1.199-1.771,2.437V22h-2.948v-9.492h2.83v1.297h0.04c0.394-0.746,1.356-1.533,2.791-1.533 c2.987,0,3.539,1.966,3.539,4.522V22z"/></svg>
+            </a>
+          </div>
+          <div class="founder">
+            <img src="img/founders/burcu.jpeg" alt="Founder 3" class="founder-image">
+            <div class="founder-name">Burcu</div>
+            <div class="languages-known"><span>Knows:</span> Turkish, English</div>
+            <div class="languages-wishlist"><span>Wants to learn:</span> German, Spanish</div>
+            <a href = "https://www.linkedin.com/in/burcu-baycan-900926176/" target = "_blank">
+              <svg class="linkedin-icon" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 30 30" width="30px" height="30px">    <path d="M24,4H6C4.895,4,4,4.895,4,6v18c0,1.105,0.895,2,2,2h18c1.105,0,2-0.895,2-2V6C26,4.895,25.105,4,24,4z M10.954,22h-2.95 v-9.492h2.95V22z M9.449,11.151c-0.951,0-1.72-0.771-1.72-1.72c0-0.949,0.77-1.719,1.72-1.719c0.948,0,1.719,0.771,1.719,1.719 C11.168,10.38,10.397,11.151,9.449,11.151z M22.004,22h-2.948v-4.616c0-1.101-0.02-2.517-1.533-2.517 c-1.535,0-1.771,1.199-1.771,2.437V22h-2.948v-9.492h2.83v1.297h0.04c0.394-0.746,1.356-1.533,2.791-1.533 c2.987,0,3.539,1.966,3.539,4.522V22z"/></svg>
+            </a>
+          </div>
+          <div class="founder">
+            <img src="img/founders/aman.png" alt="Founder 4" class="founder-image">
+            <div class="founder-name">Aman</div>
+            <div class="languages-known"><span>Knows:</span> Nepali, Hindi, Bhojpuri, English</div>
+            <div class="languages-wishlist"><span>Wants to learn:</span> German, Spanish</div>
+            <a href = "https://www.linkedin.com/in/aman-jaiswal-5b3354178/" target = "_blank">
+              <svg class="linkedin-icon" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 30 30" width="30px" height="30px">    <path d="M24,4H6C4.895,4,4,4.895,4,6v18c0,1.105,0.895,2,2,2h18c1.105,0,2-0.895,2-2V6C26,4.895,25.105,4,24,4z M10.954,22h-2.95 v-9.492h2.95V22z M9.449,11.151c-0.951,0-1.72-0.771-1.72-1.72c0-0.949,0.77-1.719,1.72-1.719c0.948,0,1.719,0.771,1.719,1.719 C11.168,10.38,10.397,11.151,9.449,11.151z M22.004,22h-2.948v-4.616c0-1.101-0.02-2.517-1.533-2.517 c-1.535,0-1.771,1.199-1.771,2.437V22h-2.948v-9.492h2.83v1.297h0.04c0.394-0.746,1.356-1.533,2.791-1.533 c2.987,0,3.539,1.966,3.539,4.522V22z"/></svg>
+            </a>
+          </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-dark">
+      <div class="content-container">
+        <h2>Contact</h2>
+        <p>Have questions or feedback? We'd love to hear from you! Reach out to us at:</p>
+        <p>Email: support@parakeet.com</p>
+        <p>Phone: (123) 456-7890</p>
+        <p>Address: 123 Language St, Linguaville, LV 12345</p>
+      </div>
+    </section>
+
+    <script>
+      const topics = ["Ordering at a restaurant...", "Booking a hotel room...", "Asking for directions...", "Shopping for groceries..."];
+      const keywords = ["menu, bill, water...", "reservation, check-in, amenities...", "map, location, near...", "vegetables, price, fresh..."];
+      let topicIndex = 0;
+      let keywordIndex = 0;
+
+      function typeAnimation(element, text, delay, callback) {
+        let i = 0;
+        element.textContent = "";
+        const interval = setInterval(() => {
+          element.textContent += text.charAt(i);
+          i++;
+          if (i >= text.length) {
+            clearInterval(interval);
+            if (callback) callback();
+          }
+        }, delay);
+      }
+
+      function startTypingAnimation() {
+        typeAnimation(document.getElementById("typing-topic"), topics[topicIndex], 150, () => {
+          typeAnimation(document.getElementById("typing-keywords"), keywords[keywordIndex], 150, () => {
+            setTimeout(() => {
+              document.getElementById("typing-topic").textContent = "";
+              document.getElementById("typing-keywords").textContent = "";
+              topicIndex = (topicIndex + 1) % topics.length;
+              keywordIndex = (keywordIndex + 1) % keywords.length;
+              setTimeout(startTypingAnimation, 2000);
+            }, 2000);
+          });
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", startTypingAnimation);
+    </script>
   </body>
 </html>
