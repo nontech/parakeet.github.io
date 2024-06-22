@@ -9,7 +9,6 @@
         font-family: "Arial", sans-serif;
         margin: 0;
         padding: 0;
-        line-height: 1.6;
       }
       header {
         background-color: #ffffff;
@@ -53,12 +52,16 @@
       }
       .typing-container {
         font-size: 20px;
-        margin: 20px 0;
         text-align: left;
         display: inline-block;
         width: 100%;
         max-width: 600px;
       }
+
+      .typing-container div {
+        margin-bottom: 10px;
+      }
+
       .typing-label {
         display: inline-block;
         width: 80px;
@@ -68,14 +71,14 @@
       .typing-field {
         border: 1px solid #4f4cf2;
         border-radius: 8px;
-        padding: 0px;
+        padding: 0px 0px 0px 10px;
         box-sizing: border-box;
         display: inline-block;
         width: calc(100% - 100px);
-        height: 1.5em;
+        height: 2em;
         overflow: hidden;
         vertical-align: middle;
-        line-height: 1.5em; /* Adjust line-height to align text vertically */
+        line-height: 2em; /* Adjust line-height to align text vertically */
       }
       .typing-animation {
         white-space: nowrap;
@@ -106,6 +109,7 @@
           border-color: #4f4cf2;
         }
       }
+
       .arrow {
         font-size: 30px;
         margin: 20px 0;
@@ -113,9 +117,11 @@
       .email-list {
         margin-top: 40px;
       }
+
       .full-width-logo {
         width: 100%;
       }
+
       .button {
         background-color: #4f4cf2;
         color: white;
@@ -132,9 +138,18 @@
       .form-element {
         padding: 10px;
         border-radius: 8px;
-        border: 1px solid #0d0c36;
+        border: 1px solid #4f4cf2;
+        color: #4f4cf2;
         margin-right: 10px;
         width: calc(100% - 140px);
+      }
+      .form-element:focus {
+        border: 2px solid #4f4cf2;
+        outline: none; 
+      }
+
+      #about form ::placeholder{
+        color: #4f4cf2;
       }
       .content-container {
         max-width: 800px;
@@ -212,6 +227,14 @@
         width: 44px;
         height: 44px;
       }
+
+      a {
+        color: #4F4CF2;
+      }
+
+      #email{
+        color: white;
+      }
     </style>
   </head>
   <body>
@@ -225,7 +248,7 @@
     </header>
 
     <section id="features" class="section-dark">
-      <h1>Parakeet</h1>
+      <h1>How it works</h1>
       <div class="typing-container">
         <div>
           <span class="typing-label">Topic:</span>
@@ -236,7 +259,7 @@
           <span class="typing-field"><span class="typing-animation" id="typing-keywords"></span></span>
         </div>
       </div>
-      <div class="arrow">↓</div>
+      <div class="arrow">⬇️</div>
       <audio controls>
         <source src="assets/lesson-sample.mp3" type="audio/mp3" />
         Your browser does not support the audio element.
@@ -265,24 +288,30 @@
     <section id="combined" class="section-dark combined-sections">
       <div class="combined-section">
         <h2>Features</h2>
-        <p>Parakeet creates personalized learning experiences that adapt to your pace and style using GenAI.</p>
-        <p>Learn languages like you learned your first.</p>
-        <p>No screens, no grammar drills, no rote memorization, and no endless repetition without context.</p>
+        <ul>
+          <li>Support for  <a href="#supported-languages">27 languages</a> and 4 regional accents</li>
+          <li>Real-life audio conversations</li>
+          <li>Interactive lessons</li>
+          <li>Personalized learning</li>
+          <li>Progress tracking</li>
+        </ul>
       </div>
       <div class="combined-section">
         <h2>Benefits</h2>
-        <p>Immerse yourself in practical, everyday conversations, just like a native speaker would.</p>
-        <p>Parakeet uses GenAI to create real-life conversations so you learn to speak by actually speaking.</p>
+        <ul>
+          <li>It works</li>
+          <li>Start listening and speaking from day 1</li>
+          <li>Immerse yourself in practical, everyday conversations, just like a native speaker would.</li>
+        </ul>
       </div>
       <div class="combined-section">
         <h2>Our Mission</h2>
         <p>
-          We want to recreate the natural way of learning languages through generative AI. We believe in empowering people to speak any
-          language confidently.
+          We want to elevate the mental and emotional standards of humanity, this is our small contribution to the world.
         </p>
         <p>
-          Founded on the principles of cognitive science and generative AI, Parakeet is designed to make you fluent by leveraging the natural methods
-          that helped you learn your mother tongue.
+          We are committed to helping populations facing economic disadvantages by making our app free for them.
+        </p>
         </p>
       </div>
     </section>
@@ -320,13 +349,19 @@
         </div>
     </section>
 
-    <section id="contact" class="section-bright">
+    <section id="supported-languages" class="section-bright">
+      <div class="content-container">
+        <p>Supported Languages: Arabic, Bengali, Danish, English, English, English, Filipino, French, French, Gujarati, Hindi, German, Indonesian, Italian, Japanese, Kannada, Korean, Malay, Malayalam, Mandarin, Norwegian, Polish, Portuguese, Portuguese, Punjabi, Russian, Spanish, Spanish, Swedish, Tamil, Turkish, Vietnamese</p>
+      </div>
+    </section>
+
+    <section id="contact" class="section-bright-over-white">
       <div class="content-container">
         <h2>Contact</h2>
         <p>Have questions or feedback? We'd love to hear from you! Reach out to us at:</p>
-        <p>Email: support@parakeet.com</p>
-        <p>Phone: (123) 456-7890</p>
-        <p>Address: 123 Language St, Linguaville, LV 12345</p>
+        <!-- Write actual email link html element -->
+        <a id="email" href="mailto:parakeet.lang@gmail.com"> parakeet.lang@gmail.com</a>
+        <p>Berlin</p>
       </div>
     </section>
 
