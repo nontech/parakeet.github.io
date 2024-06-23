@@ -1,90 +1,45 @@
-import { drawAudioVisual } from "./draw_audio_visual.js";
-import { handleVoice } from "./handle_voice.js";
+const topics = ["Ordering at a restaurant...", "Booking a hotel room...", "Asking for directions...", "Shopping for groceries..."];
+const keywords = ["menu, bill, water...", "reservation, check-in, amenities...", "map, location, near...", "vegetables, price, fresh..."];
+let topicIndex = 0;
+let keywordIndex = 0;
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Check if the browser supports the Web Speech API
-  if (!("webkitSpeechRecognition" in window)) {
-    alert("Your browser does not support speech recognition. Please try using Google Chrome.");
-    return;
-  }
-
-  const isAndroid = /Android/i.test(navigator.userAgent);
-  console.log("Is Android:", isAndroid);
-  if (isAndroid) {
-    let visualization_box = document.getElementById("visualization-box");
-    visualization_box.style.visibility = "hidden";
-  }
-
-  const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
-  recognition.continuous = !isAndroid;
-  recognition.interimResults = true; // Show interim results
-  recognition.lang = "en-US"; // Set language
-
-  var isRecognizing = false; // Track if recognition is active
-
-  recognition.onresult = function (event) {
-    var last = event.results.length - 1;
-    var command = event.results[last][0].transcript.trim().toLowerCase();
-    console.log("Voice command recognized:", command);
-    handleVoice(command);
-  };
-
-  recognition.onstart = function () {
-    isRecognizing = true;
-    console.log("Recognition has started");
-  };
-
-  recognition.onaudiostart = function () {
-    console.log("Audio capturing started");
-  };
-
-  recognition.onsoundstart = function () {
-    console.log("Sound has been detected");
-  };
-
-  recognition.onspeechstart = function () {
-    console.log("Speech has been detected");
-  };
-
-  recognition.onaudioend = function () {
-    console.log("Audio capturing ended");
-  };
-
-  recognition.onend = function () {
-    isRecognizing = false;
-    console.log("Recognition has ended");
-    console.log("Restarting recognition");
-    recognition.start();
-  };
-
-  recognition.onerror = function (event) {
-    console.error("Recognition error:", event.error);
-  };
-
-  document.querySelector("#startToBeginButton").addEventListener("click", function () {
-    closeModal();
-    handleStartRecognition();
-  });
-
-  function closeModal() {
-    var modal = document.getElementById("voiceModal");
-    modal.style.display = "none";
-    var logo = document.getElementById("logo");
-    logo.style.background = "none";
-  }
-
-  function handleStartRecognition() {
-    if (!isRecognizing) {
-      recognition.start();
-      if (!isAndroid) {
-        drawAudioVisual();
-      }
-    } else {
-      console.log("Recognition is already running.");
+function typeAnimation(element, text, delay, callback) {
+  let i = 0;
+  element.value = ""; // Reset the value of the input
+  const interval = setInterval(() => {
+    element.value += text.charAt(i); // Update the value instead of textContent
+    i++;
+    if (i >= text.length) {
+      clearInterval(interval);
+      if (callback) callback();
     }
-  }
+  }, delay);
+}
 
-  // attach functions to the window object to make them accessible globally
-  window.closeModal = closeModal;
-  window.handleStartRecognition = handleStartRecognition;
-});
+function startTypingAnimation() {
+  typeAnimation(document.getElementById("typing-topic"), topics[topicIndex], 150, () => {
+    typeAnimation(document.getElementById("typing-keywords"), keywords[keywordIndex], 150, () => {
+      setTimeout(() => {
+        document.getElementById("typing-topic").textContent = "";
+        document.getElementById("typing-keywords").textContent = "";
+        topicIndex = (topicIndex + 1) % topics.length;
+        keywordIndex = (keywordIndex + 1) % keywords.length;
+        setTimeout(startTypingAnimation, 2000);
+      }, 2000);
+    });
+  });
+}
+
+function autoDropDown() {
+  const selectElement = document.getElementById("languageSelect");
+
+  setInterval(() => {
+    console.log("Randomly selecting an option");
+    const options = selectElement.options;
+    const randomIndex = Math.floor(Math.random() * options.length);
+    options[randomIndex].selected = true;
+  }, 4000);
+}
+
+document.addEventListener("DOMContentLoaded", startTypingAnimation);
+document.addEventListener("DOMContentLoaded", autoDropDown);
