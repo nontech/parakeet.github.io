@@ -347,6 +347,163 @@
         color: #4F4CF2;
       }
 
+      @media only screen and (max-width: 768px) {
+          header {
+              flex-direction: column;
+              padding: 5px;
+          }
+
+          header nav {
+              text-align: center;
+              margin-top: 10px; /* Space between logo and navigation links */
+          }
+
+          header nav a {
+              margin: 0 5px; /* Reduce margin between links */
+              font-size: 14px; /* Smaller font size */
+          }
+
+          header img {
+              display: none;
+          }
+
+          section {
+            padding: 20px 10px;
+          }
+
+          #mockForm {
+              width: 80vw;
+          }
+          #mockForm, .typing-container, #languageSelectContainer {
+              flex-direction: column;
+              align-items: center; /* Center-align the items */
+          }
+
+          .typing-label {
+              text-align: center; /* Center-align the labels */
+          }
+
+          .typing-container, #languageSelectContainer {
+              flex-direction: column;
+              width: 100%; /* Ensure full width */
+              align-items: center; /* Center align the items */
+          }
+
+          .typing-field, #languageSelect {
+              width: 90%; /* Provide adequate width */
+              margin: 0 auto; /* Centering fields */
+          }
+
+          .typing-label, label {
+              width: auto; /* Adjust label width */
+              display: block; /* Make labels block to take full width */
+              margin-bottom: 5px; /* Space between label and input */
+          }
+
+          #signup {
+              padding: 20px; /* More padding */
+              text-align: center; /* Center text for better readability */
+          }
+
+          #signup h2, #signup p {
+              line-height: 1.4; /* Increase line height */
+              margin-bottom: 10px; /* Add space between text */
+          }
+
+          #emailSubscription {
+              width: 100%; /* Full width */
+              box-sizing: border-box; /* Includes padding and border in width */
+          }
+
+          .combined-section {
+              text-align: center;
+              padding: 0 20px; /* Add padding for text not to touch the edges */
+          }
+
+          .combined-section ul, .combined-section p {
+              display: block; /* Ensure it takes full width */
+              text-align: center;
+          }
+
+          .founders {
+              align-items: center;
+              text-align: center;
+          }
+
+          .founder {
+              display: flex;
+              flex-direction: column;
+              justify-content: flex-start;
+          }
+
+          .founder div{
+              margin-top: 20px;
+          }
+
+          #contact .content-container {
+              text-align: center;
+          }
+
+          .combined-sections {
+              flex-direction: column;
+          }
+
+          #supported-languages {
+              text-align: justify;
+              line-height: 1.5; /* More appropriate line height */
+              padding: 20px 10px; /* Less padding */
+          }
+
+          #supported-languages p {
+              text-align: center;
+          }
+
+          #logo-section img {
+              width: 80%; /* Adjust to ensure visibility */
+              height: auto;
+              margin: 20px auto; /* Center the logo with margin */
+              display: block;
+              min-width: 150px; /* Prevent the logo from becoming too small */
+          }
+
+          .combined-section, .content-container, #contact .content-container, .founders {
+              text-align: center;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+          }
+
+          .combined-section ul {
+              text-align: left; /* Align text left */
+              padding-left: 20px; /* Adjust padding to align bullets */
+          }
+
+          .combined-section li {
+              text-align: left; /* Ensure list item text aligns left */
+          }
+
+          .founder {
+              max-width: none; /* Allow founder blocks to take necessary space */
+          }
+
+          .combined-sections, #us, #contact, #features {
+              align-items: center;
+              justify-content: center;
+              text-align: center;
+          }
+
+          #languageSelect {
+              width: auto; /* Reset width to default */
+          }
+
+          .typing-field {
+              width: 100%; /* 90% of viewport width */
+              max-width: none; /* Override any max-width settings */
+          }
+        }
+
+
+
     </style>
   </head>
   <body>
