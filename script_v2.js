@@ -3,6 +3,25 @@ const keywords = ["menu, bill, water...", "reservation, check-in, amenities...",
 let topicIndex = 0;
 let keywordIndex = 0;
 
+document.getElementById("subscriptionForm").addEventListener("submit", function (e) {
+  e.preventDefault(); // Stop the form from submitting the traditional way
+
+  var formData = new FormData(this);
+
+  fetch(this.action, {
+    method: "POST",
+    body: formData,
+    mode: "no-cors", // Google Forms require no-cors mode for cross-origin requests
+  })
+    .then((response) => {
+      alert("Your message has been sent! We will get back to you soon.");
+    })
+    .then((data) => {
+      document.getElementById("emailSubscription").value = "";
+    })
+    .catch((error) => console.error("Error:", error));
+});
+
 function typeAnimation(element, text, delay, callback) {
   let i = 0;
   element.value = ""; // Reset the value of the input
