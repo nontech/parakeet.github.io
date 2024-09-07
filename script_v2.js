@@ -62,3 +62,23 @@ function autoDropDown() {
 
 document.addEventListener("DOMContentLoaded", startTypingAnimation);
 document.addEventListener("DOMContentLoaded", autoDropDown);
+
+document.getElementById("platformEmailForm").addEventListener("submit", function (e) {
+  e.preventDefault(); // Stop the form from submitting the traditional way
+
+  var formData = new FormData(this);
+
+  fetch(this.action, {
+    method: "POST",
+    body: formData,
+    mode: "no-cors", // Google Forms require no-cors mode for cross-origin requests
+  })
+    .then((response) => {
+      alert("Your email has been submitted successfully!");
+    })
+    .then((data) => {
+      document.getElementById("androidEmail").value = ""; // Clear Android email field
+      document.getElementById("iosEmail").value = ""; // Clear iOS email field
+    })
+    .catch((error) => console.error("Error:", error));
+});
