@@ -63,22 +63,27 @@ function autoDropDown() {
 document.addEventListener("DOMContentLoaded", startTypingAnimation);
 document.addEventListener("DOMContentLoaded", autoDropDown);
 
-document.getElementById("platformEmailForm").addEventListener("submit", function (e) {
-  e.preventDefault(); // Stop the form from submitting the traditional way
+// Carousel Functionality for Use Cases
+let usecaseIndex = 0;
+let lastItemIndex = 0;
 
-  var formData = new FormData(this);
+function showUsecaseCarousel() {
+  const carouselSlide = document.querySelector(".carousel-slide-usecases");
+  const carouselItems = document.querySelectorAll(".carousel-item-usecase");
+  usecaseIndex++;
 
-  fetch(this.action, {
-    method: "POST",
-    body: formData,
-    mode: "no-cors", // Google Forms require no-cors mode for cross-origin requests
-  })
-    .then((response) => {
-      alert("Your email has been submitted successfully!");
-    })
-    .then((data) => {
-      document.getElementById("androidEmail").value = ""; // Clear Android email field
-      document.getElementById("iosEmail").value = ""; // Clear iOS email field
-    })
-    .catch((error) => console.error("Error:", error));
-});
+  if (usecaseIndex >= carouselItems.length) {
+    if (lastItemIndex == 1) {
+      usecaseIndex = 0;
+      lastItemIndex = 0;
+      carouselSlide.style.transform = "translateX(" + -usecaseIndex * 100 + "%)";
+    }
+    lastItemIndex = 1;
+    return;
+  }
+
+  carouselSlide.style.transform = "translateX(" + -usecaseIndex * 100 + "%)";
+}
+
+// Start the carousel for use cases
+setInterval(showUsecaseCarousel, 4000);

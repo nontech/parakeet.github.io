@@ -287,11 +287,17 @@ h2 {
 
 .combined-sections {
   display: flex;
-  gap: 80px;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 40px;
 }
 .combined-section {
   flex: 1;
   text-align: left;
+}
+.our-mission {
+  flex: 1;
+  text-align: center;
 }
 .founders {
   display: flex;
@@ -324,16 +330,17 @@ h2 {
 
 .languages-known,
 .languages-wishlist {
+  width: 100%;
   font-size: 14px;
   font-style: normal;
   height: 20px;
-  text-align: left;
+  text-align: center;
   align-self: flex-start;
 }
 
 .languages-known span,
 .languages-wishlist span {
-  font-weight: 400;
+  font-weight: bold;
 }
 
 .linkedin-icon {
@@ -433,18 +440,49 @@ a {
   }
 
   .founders {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     text-align: center;
+    margin-top: 20px; /* Adjust as needed */
   }
 
   .founder {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    max-width: 90%; /* Ensure founder cards don't exceed screen width */
+    margin: 40px 0; /* Reduce vertical margin between founders */
+    height: auto;
   }
 
-  .founder div {
-    margin-top: 20px;
+  .languages-known,
+  .languages-wishlist {
+    width: 100%;
+    font-size: 14px;
+    font-style: normal;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+
+  .founder img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px; /* Add margin below image */
+  }
+
+  .founder-name {
+    margin-bottom: 15px; /* Add margin below name */
+  }
+
+  .languages-known {
+    margin-bottom: 15px; /* Add margin below this element */
+  }
+
+  .languages-wishlist {
+    margin-bottom: 10px; /* Add margin below this element */
+  }
+
+  .founder a {
+    margin-top: 10px; /* Add margin above LinkedIn icon */
   }
 
   #contact .content-container {
@@ -453,6 +491,7 @@ a {
 
   .combined-sections {
     flex-direction: column;
+    gap: 20px;
   }
 
   #supported-languages {
@@ -473,13 +512,10 @@ a {
     min-width: 150px; /* Prevent the logo from becoming too small */
   }
 
-  .combined-section,
-  .content-container,
-  #contact .content-container,
-  .founders {
+  .combined-section {
     text-align: center;
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
     align-items: center;
   }
 
@@ -494,15 +530,6 @@ a {
 
   .founder {
     max-width: none; /* Allow founder blocks to take necessary space */
-  }
-
-  .combined-sections,
-  #us,
-  #contact,
-  #features {
-    align-items: center;
-    justify-content: center;
-    text-align: center;
   }
 
   #languageSelect {
@@ -692,4 +719,203 @@ a {
 .platform-icon {
   width: 24px;
   height: 24px;
+}
+
+/* Hero Section */
+#hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 60px 20px;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 800px;
+}
+
+.hero-content p {
+  align-items: center;
+  text-align: justify;
+  max-width: 400px;
+}
+
+#hero h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* How It Works Section */
+#how-it-works {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+#how-it-works h2 {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.carousel-container-usecases {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  overflow: hidden;
+}
+
+.carousel-slide-usecases {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item-usecase {
+  min-width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.carousel-item-usecase h3 {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #4f4cf2;
+}
+
+.carousel-item-usecase img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.carousel-item-usecase p {
+  font-size: 1.2em;
+  color: #ffffff;
+}
+
+.get-parakeet-app img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* Add this new class to style the container */
+.carousel-item-usecase-image {
+  width: 100%;
+  /* Remove the fixed height to allow content to dictate the height */
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Adjust the mockFormContainer to fit inside the new container */
+#mockFormContainer {
+  width: 100%;
+  /* Remove height: 100%; to allow it to expand with content */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: #4f4cf2 1px solid;
+  border-radius: 10px;
+}
+
+/* Desktop styles */
+@media only screen and (min-width: 768px) {
+  .carousel-item-usecase-image {
+    height: 300px; /* Fixed height for desktop to match other carousel images */
+  }
+
+  #mockFormContainer {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  #mockForm {
+    width: 90%;
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #mockForm label,
+  #mockForm select,
+  #mockForm input,
+  .arrow,
+  #mockFormContainer audio {
+    font-size: 0.9em; /* Adjust font size as needed */
+  }
+
+  /* Reduce margins and paddings */
+  #mockForm .typing-container,
+  #languageSelectContainer {
+    margin-bottom: 10px;
+  }
+
+  /* Ensure the audio element fits */
+  #mockFormContainer audio {
+    width: 50%;
+  }
+}
+
+/* Mobile styles */
+@media only screen and (max-width: 767px) {
+  .carousel-item-usecase-image {
+    height: auto; /* Allow height to adjust based on content */
+    overflow: visible; /* Show overflowing content */
+  }
+
+  #mockFormContainer {
+    height: auto; /* Allow height to adjust */
+    overflow: visible; /* Show overflowing content */
+    padding: 30px;
+  }
+
+  #mockForm {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  #mockForm label,
+  #mockForm select,
+  #mockForm input,
+  .arrow,
+  #mockFormContainer audio {
+    font-size: 1em; /* Adjust font size for readability */
+  }
+
+  /* Adjust margins and paddings */
+  #mockForm .typing-container,
+  #languageSelectContainer {
+    margin-bottom: 10px;
+  }
+
+  /* Ensure the audio element fits */
+  #mockFormContainer audio {
+    width: 100%;
+  }
 }
