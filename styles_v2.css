@@ -807,7 +807,7 @@ a {
 }
 
 .get-parakeet-app img {
-  width: 100%;
+  width: 50%;
   max-height: 300px;
   object-fit: cover;
   border-radius: 10px;
