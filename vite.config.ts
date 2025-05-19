@@ -19,6 +19,36 @@ const privacyPolicyPlugin = (): PluginOption => {
   };
 };
 
+// Plugin to handle SPA route pre-rendering
+const prerenderSPAPlugin = (): PluginOption => {
+  return {
+    name: 'prerender-spa-routes',
+    closeBundle: {
+      sequential: true,
+      handler: async () => {
+        // List of routes to prerender
+        const routes = ['/privacy-policy', '/imprint', '/accountdeletion'];
+
+        // Read the main index.html
+        const template = fs.readFileSync('dist/index.html', 'utf-8');
+
+        // Create directories and write index.html for each route
+        for (const route of routes) {
+          const dirPath = `dist${route}`;
+
+          if (!fs.existsSync(dirPath)) {
+            fs.mkdirSync(dirPath, { recursive: true });
+          }
+
+          fs.writeFileSync(`${dirPath}/index.html`, template);
+        }
+
+        console.log('Prerendered routes:', routes);
+      },
+    },
+  };
+};
+
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   server: {
@@ -29,6 +59,7 @@ export default defineConfig(({ mode }) => ({
     react(),
     privacyPolicyPlugin(),
     mode === 'development' && componentTagger(),
+    mode === 'production' && prerenderSPAPlugin(),
   ].filter(Boolean),
   resolve: {
     alias: {
