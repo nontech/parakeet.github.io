@@ -17,8 +17,8 @@ const Hero = () => {
             Your Topics, Your Dialogues, Your Language.
           </h2>
           <p className="text-lg text-white/70 max-w-xl">
-            Create personalized audio lessons in 26 languages. Learn through
-            real conversations about topics that matter to you.
+            Create personalized audio lessons in 26 languages. Learn languages
+            through real conversations about topics that matter to you.
           </p>
 
           <div className="flex flex-col md:flex-row pt-4 gap-6">
