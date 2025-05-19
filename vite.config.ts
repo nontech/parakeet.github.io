@@ -10,8 +10,8 @@ const privacyPolicyPlugin = (): PluginOption => {
     name: 'privacy-policy-rewrite',
     configureServer(server) {
       server.middlewares.use((req, res, next) => {
-        if (req.url === '/privacy-policy') {
-          req.url = '/privacy-policy/index.html';
+        if (req.url === '/privacypolicy') {
+          req.url = '/privacypolicy/index.html';
         }
         next();
       });
@@ -27,7 +27,7 @@ const prerenderSPAPlugin = (): PluginOption => {
       sequential: true,
       handler: async () => {
         // List of routes to prerender
-        const routes = ['/privacy-policy', '/imprint', '/accountdeletion'];
+        const routes = ['/privacypolicy', '/imprint', '/accountdeletion'];
 
         // Read the main index.html
         const template = fs.readFileSync('dist/index.html', 'utf-8');

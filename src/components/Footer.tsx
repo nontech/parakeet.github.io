@@ -49,7 +49,7 @@ const Footer = () => {
               <ul className="space-y-2">
                 <li>
                   <a
-                    href="/privacy-policy"
+                    href="/privacypolicy"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
                     Privacy Policy
