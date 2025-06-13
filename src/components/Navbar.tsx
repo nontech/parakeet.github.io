@@ -22,19 +22,19 @@ const Navbar = () => {
       <div className="hidden md:flex items-center space-x-8">
         <a
           href="/#features"
-          className="text-foreground text-white hover:text-primary transition-colors"
+          className="text-foreground text-white hover:text-[#a8b1ff] transition-colors"
         >
           Features
         </a>
         <a
           href="/#languages"
-          className="text-foreground text-white hover:text-primary transition-colors"
+          className="text-foreground text-white hover:text-[#a8b1ff] transition-colors"
         >
           Languages
         </a>
         <a
           href="/#testimonials"
-          className="text-foreground text-white hover:text-primary transition-colors"
+          className="text-foreground text-white hover:text-[#a8b1ff] transition-colors"
         >
           Testimonials
         </a>
@@ -79,19 +79,19 @@ const Navbar = () => {
         <div className="absolute top-full left-0 right-0 bg-white shadow-lg rounded-b-lg p-4 flex flex-col space-y-4 md:hidden">
           <a
             href="/#features"
-            className="text-foreground hover:text-primary transition-colors"
+            className="text-foreground hover:text-[#a8b1ff] transition-colors"
           >
             Features
           </a>
           <a
             href="/#languages"
-            className="text-foreground hover:text-primary transition-colors"
+            className="text-foreground hover:text-[#a8b1ff] transition-colors"
           >
             Languages
           </a>
           <a
             href="/#testimonials"
-            className="text-foreground hover:text-primary transition-colors"
+            className="text-foreground hover:text-[#a8b1ff] transition-colors"
           >
             Testimonials
           </a>

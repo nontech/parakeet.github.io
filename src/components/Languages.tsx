@@ -17,7 +17,7 @@ const Languages = () => {
           <Badge className="bg-white/20 text-white hover:bg-white/30 mb-4">
             Languages
           </Badge>
-          <h2 className="text-4xl font-bold mb-4">Unlock 26 Languages</h2>
+          <h2 className="text-4xl font-bold mb-4">Unlock 26+ Languages</h2>
           <p className="text-xl text-white/80 max-w-2xl mx-auto">
             Create Custom Audio Lessons on the Go!
           </p>

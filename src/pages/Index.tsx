@@ -6,6 +6,7 @@ import Testimonials from '@/components/Testimonials';
 import CallToAction from '@/components/CallToAction';
 import Footer from '@/components/Footer';
 import Subscribe from '@/components/Subscribe';
+import Video from '@/components/Video';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
@@ -40,6 +41,7 @@ const Index = () => {
       <Features />
       <Languages />
       <Testimonials />
+      <Video />
       <CallToAction />
       <Subscribe />
       <Footer />

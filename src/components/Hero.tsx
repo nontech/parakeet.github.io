@@ -4,8 +4,8 @@ import { FaApple, FaAndroid } from 'react-icons/fa';
 
 const Hero = () => {
   return (
-    <section className="gradient-bg min-h-[90vh] w-full flex items-center relative overflow-hidden">
-      <div className="container mx-auto px-6 py-24 md:py-32 flex flex-col-reverse md:flex-row items-center justify-between gap-12 relative z-10">
+    <section className="gradient-bg min-h-[90vh] w-full flex items-start relative overflow-hidden">
+      <div className="container mx-auto px-6 pt-32 md:pt-40 flex flex-col-reverse md:flex-row items-start justify-between gap-12 relative z-10">
         <div className="w-full md:w-1/2 text-white space-y-6">
           <Badge className="bg-white/20 text-white hover:bg-white/30 mb-4">
             Available for iOS & Android

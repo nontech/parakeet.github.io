@@ -1,8 +1,8 @@
 const Footer = () => {
   return (
-    <footer className="py-12 px-6 bg-white border-t">
+    <footer className="py-8 px-6 bg-white border-t">
       <div className="container mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-center mb-8">
+        <div className="flex flex-col md:flex-row justify-between items-center mb-6">
           <div className="mb-6 md:mb-0">
             <div>
               <img
