@@ -1,17 +1,16 @@
-import { defineConfig, PluginOption } from 'vite';
-import react from '@vitejs/plugin-react-swc';
-import path from 'path';
-import { componentTagger } from 'lovable-tagger';
-import fs from 'fs';
+import { defineConfig, PluginOption } from "vite";
+import react from "@vitejs/plugin-react-swc";
+import path from "path";
+import fs from "fs";
 
 // Custom plugin to serve /privacy-policy/index.html at /privacy-policy
 const privacyPolicyPlugin = (): PluginOption => {
   return {
-    name: 'privacy-policy-rewrite',
+    name: "privacy-policy-rewrite",
     configureServer(server) {
       server.middlewares.use((req, res, next) => {
-        if (req.url === '/privacypolicy') {
-          req.url = '/privacypolicy/index.html';
+        if (req.url === "/privacypolicy") {
+          req.url = "/privacypolicy/index.html";
         }
         next();
       });
@@ -22,15 +21,15 @@ const privacyPolicyPlugin = (): PluginOption => {
 // Plugin to handle SPA route pre-rendering
 const prerenderSPAPlugin = (): PluginOption => {
   return {
-    name: 'prerender-spa-routes',
+    name: "prerender-spa-routes",
     closeBundle: {
       sequential: true,
       handler: async () => {
         // List of routes to prerender
-        const routes = ['/privacypolicy', '/imprint', '/accountdeletion'];
+        const routes = ["/privacypolicy", "/imprint", "/accountdeletion"];
 
         // Read the main index.html
-        const template = fs.readFileSync('dist/index.html', 'utf-8');
+        const template = fs.readFileSync("dist/index.html", "utf-8");
 
         // Create directories and write index.html for each route
         for (const route of routes) {
@@ -43,7 +42,7 @@ const prerenderSPAPlugin = (): PluginOption => {
           fs.writeFileSync(`${dirPath}/index.html`, template);
         }
 
-        console.log('Prerendered routes:', routes);
+        console.log("Prerendered routes:", routes);
       },
     },
   };
@@ -52,18 +51,17 @@ const prerenderSPAPlugin = (): PluginOption => {
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   server: {
-    host: '::',
+    host: "::",
     port: 8080,
   },
   plugins: [
     react(),
     privacyPolicyPlugin(),
-    mode === 'development' && componentTagger(),
-    mode === 'production' && prerenderSPAPlugin(),
+    mode === "production" && prerenderSPAPlugin(),
   ].filter(Boolean),
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
+      "@": path.resolve(__dirname, "./src"),
     },
   },
 }));
