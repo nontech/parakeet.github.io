@@ -26,7 +26,7 @@ const prerenderSPAPlugin = (): PluginOption => {
       sequential: true,
       handler: async () => {
         // List of routes to prerender
-        const routes = ["/privacypolicy", "/imprint", "/accountdeletion"];
+        const routes = ["/privacypolicy", "/imprint", "/accountdeletion", "/team"];
 
         // Read the main index.html
         const template = fs.readFileSync("dist/index.html", "utf-8");
