@@ -15,7 +15,7 @@ const CallToAction = () => {
           </p>
 
           <div className="flex flex-col md:flex-row justify-center gap-6 md:gap-8">
-            <div className="flex flex-col items-center">
+            {/* <div className="flex flex-col items-center">
               <Button
                 className="bg-white text-primary hover:bg-white/90 text-lg px-8 py-6 rounded-full font-medium w-full md:w-auto mb-3 flex items-center gap-2"
                 onClick={() => {
@@ -27,7 +27,7 @@ const CallToAction = () => {
               >
                 <FaApple className="h-6 w-6" /> Download for iOS
               </Button>
-            </div>
+            </div> */}
 
             <div className="flex flex-col items-center">
               <Button

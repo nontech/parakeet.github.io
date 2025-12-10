@@ -22,7 +22,7 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col md:flex-row pt-4 gap-6">
-            <Button
+            {/* <Button
               className="bg-white text-primary hover:bg-white/90 text-lg px-8 py-6 rounded-full font-medium flex items-center justify-center gap-2"
               onClick={() => {
                 window.open(
@@ -32,7 +32,7 @@ const Hero = () => {
               }}
             >
               <FaApple className="h-6 w-6" /> Download for iOS
-            </Button>
+            </Button> */}
             <Button
               className="bg-white/10 border border-white/30 backdrop-blur-sm text-white hover:bg-white/20 text-lg px-8 py-6 rounded-full font-medium flex items-center justify-center gap-2"
               onClick={() => {

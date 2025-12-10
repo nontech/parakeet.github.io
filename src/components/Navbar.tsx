@@ -38,6 +38,12 @@ const Navbar = () => {
         >
           Testimonials
         </a>
+        <a
+          href="/team"
+          className="text-foreground text-white hover:text-[#a8b1ff] transition-colors"
+        >
+          Team
+        </a>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button className="bg-primary hover:bg-secondary transition-colors">
@@ -45,14 +51,14 @@ const Navbar = () => {
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent>
-            <DropdownMenuItem>
+            {/* <DropdownMenuItem>
               <a
                 href="https://apps.apple.com/de/app/parakeet-app/id6618158139?l=en-GB"
                 className="flex items-center gap-2"
               >
                 <FaApple className="h-4 w-4" /> Download for iOS
               </a>
-            </DropdownMenuItem>
+            </DropdownMenuItem> */}
             <DropdownMenuItem>
               <a
                 href="https://play.google.com/store/apps/details?id=com.parakeetapp.app"
@@ -94,6 +100,12 @@ const Navbar = () => {
             className="text-foreground hover:text-[#a8b1ff] transition-colors"
           >
             Testimonials
+          </a>
+          <a
+            href="/team"
+            className="text-foreground hover:text-[#a8b1ff] transition-colors"
+          >
+            Team
           </a>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
